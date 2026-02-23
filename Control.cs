@@ -41,12 +41,12 @@ public partial class Control : Godot.Control
 }
 public static class Generator
 {
-    private static long _state = System.Environment.TickCount;
+    private static ulong _state = (ulong)System.Environment.TickCount;
 
     public static int Get(int max) 
     {
         _state = (214013 * _state + 2531011) % 2147483648;
         int result = (int)(_state >> 16) % max;
-        return Math.Abs(result);
+        return result;
     }
 }
