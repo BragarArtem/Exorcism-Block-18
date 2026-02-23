@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://bff4q014485d7"]
 
-[node name="Control" type="Control" unique_id=1233141606]
+[ext_resource type="Script" uid="uid://p0k57q0aoqrv" path="res://Control.cs" id="1_0fbet"]
+
+[node name="Control" type="Control" unique_id=1233141606 node_paths=PackedStringArray("nickname_inputField")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0fbet")
+nickname_inputField = NodePath("nickname_inputField")
 
 [node name="Play_button" type="Button" parent="." unique_id=631990563]
 layout_mode = 0
@@ -56,3 +60,5 @@ offset_top = 543.0
 offset_right = 115.0
 offset_bottom = 583.0
 text = "randomize"
+
+[connection signal="pressed" from="nicknameRandomize_button" to="nicknameRandomize_button" method="_on_pressed"]
