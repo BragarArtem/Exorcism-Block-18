@@ -29,8 +29,8 @@ public partial class Control : Godot.Control
 	}
 	public void _on_pressed()
 	{
-		string n = firstNames[GD.Randi() % (uint)firstNames.Length];
-		string s = lastNames[GD.Randi() % (uint)lastNames.Length];
+		string n = firstNames[Generator.Get(firstNames.Length)];
+		string s = lastNames[Generator.Get(lastNames.Length)];
 		string fullName = "";
 		foreach(string part in new string[] { n, s })
 		{
@@ -38,4 +38,15 @@ public partial class Control : Godot.Control
 		}
         nickname_inputField.Text = fullName.Trim();
 	}
+}
+public static class Generator
+{
+    private static long _state = System.Environment.TickCount;
+
+    public static int Get(int max) 
+    {
+        _state = (214013 * _state + 2531011) % 2147483648;
+        int result = (int)(_state >> 16) % max;
+        return Math.Abs(result);
+    }
 }
