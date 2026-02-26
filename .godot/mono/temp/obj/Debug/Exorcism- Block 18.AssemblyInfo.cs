@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Exorcism- Block 18")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da7d28b9529042db0795774ed459ef26f7919d69")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c135bdc9fed5e88281564c4d068d2b699259d247")]
 [assembly: System.Reflection.AssemblyProductAttribute("Exorcism- Block 18")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Exorcism- Block 18")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
