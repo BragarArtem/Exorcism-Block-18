@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ddeth0fpx7lwm"]
+
+[ext_resource type="Script" uid="uid://dsf3bstqd72ga" path="res://scripts/Enemies/Goblin.cs" id="1_38bgx"]
+[ext_resource type="Texture2D" uid="uid://d0mrcbqycw06n" path="res://spites/pixel-art-style-old-videogames-style-retro-style-18-bit-goblin-with-shield-vector.jpg" id="2_tkvsu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ydrqk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tkvsu"]
+
+[node name="Enemy_goblin" type="CharacterBody2D" unique_id=140441111]
+script = ExtResource("1_38bgx")
+
+[node name="Goblin" type="AnimatedSprite2D" parent="." unique_id=354258737]
+sprite_frames = SubResource("SpriteFrames_ydrqk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1514175972]
+position = Vector2(1.999939, -7)
+scale = Vector2(0.08265306, 0.071428575)
+texture = ExtResource("2_tkvsu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471884168]
+shape = SubResource("CapsuleShape2D_tkvsu")

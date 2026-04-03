@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://lbai5oipcniq"]
+
+[ext_resource type="Script" uid="uid://btyv471nqfdjk" path="res://Utility/HurtBox.cs" id="1_flpa1"]
+
+[node name="HurtBox" type="Area2D" unique_id=965366567]
+script = ExtResource("1_flpa1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1728805390]
+
+[node name="Timer" type="Timer" parent="." unique_id=1974614737]

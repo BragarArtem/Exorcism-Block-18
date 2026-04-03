@@ -1,7 +1,10 @@
-Button
-TextureButton
-Container
-OptionButton
-LineEdit
-CheckButton
-MenuButton
+Timer
+CollisionShape2D
+Area2D
+Sprite2D
+AnimatedSprite2D
+CharacterBody2D
+TextureRect
+TileMapLayer
+Camera2D
+Node2D

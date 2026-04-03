@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dstvbixy8fcc8"]
+
+[ext_resource type="PackedScene" uid="uid://4ycce3cogoq6" path="res://scences/player.tscn" id="1_i2nf4"]
+[ext_resource type="Texture2D" uid="uid://xm340i70vll4" path="res://spites/240_F_443693407_zQJa1GCqtY6C0OyrRjYGlMDi15XdTaW1.jpg" id="2_am3uj"]
+[ext_resource type="PackedScene" uid="uid://ddeth0fpx7lwm" path="res://scences/enemy.tscn" id="3_8edsk"]
+
+[node name="World" type="Node2D" unique_id=477331173]
+position = Vector2(19, 38)
+
+[node name="Player" parent="." unique_id=1414328437 groups=["player"] instance=ExtResource("1_i2nf4")]
+position = Vector2(997, 945)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1216297139]
+z_index = -1
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(982, 964)
+texture = ExtResource("2_am3uj")
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
+
+[node name="Enemy_goblin" parent="." unique_id=140441111 instance=ExtResource("3_8edsk")]
+position = Vector2(615, 810)
