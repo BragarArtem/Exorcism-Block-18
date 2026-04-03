@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dkxkbejhmgy64" path="res://Utility/HitBox.cs" id="1_n1tgr"]
 
-[node name="HitBox" type="Area2D" unique_id=538140040]
+[node name="HitBox" type="Area2D" unique_id=538140040 groups=["attack"]]
 script = ExtResource("1_n1tgr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205227415]
 
-[node name="Timer" type="Timer" parent="." unique_id=1096175093]
+[node name="DisableTimer" type="Timer" parent="." unique_id=1096175093]
