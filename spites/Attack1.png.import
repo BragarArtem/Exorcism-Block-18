@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0mrcbqycw06n"
-path="res://.godot/imported/pixel-art-style-old-videogames-style-retro-style-18-bit-goblin-with-shield-vector.jpg-426deafe2d79db66cb67d89c9040c39c.ctex"
+uid="uid://db4jrp17dmj40"
+path="res://.godot/imported/Attack1.png-b509cf52cf0b4b7e581b5cc0eebb7e3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spites/pixel-art-style-old-videogames-style-retro-style-18-bit-goblin-with-shield-vector.jpg"
-dest_files=["res://.godot/imported/pixel-art-style-old-videogames-style-retro-style-18-bit-goblin-with-shield-vector.jpg-426deafe2d79db66cb67d89c9040c39c.ctex"]
+source_file="res://spites/Attack1.png"
+dest_files=["res://.godot/imported/Attack1.png-b509cf52cf0b4b7e581b5cc0eebb7e3f.ctex"]
 
 [params]
 

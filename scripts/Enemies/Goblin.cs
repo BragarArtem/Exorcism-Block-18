@@ -1,15 +1,17 @@
 using Godot;
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
-public partial class Goblin : CharacterBody2D
+
+public partial class Goblin : CharacterBody2D 
 {
+private AnimatedSprite2D _animatedSprite; 
+
 [Export] public float Speed = 120.0f;
 [Export] public float StopDistance = 50.0f;
 private Node2D _player;
 	public override void _Ready()
 	{
 		_player = GetTree().GetFirstNodeInGroup("player") as Node2D;
+		_animatedSprite = GetNode<AnimatedSprite2D>("Goblin");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -21,6 +23,9 @@ private Node2D _player;
 		
 		Vector2 direction = GlobalPosition.DirectionTo(_player.GlobalPosition);
 		Velocity = direction * Speed;
+		
+		_animatedSprite.Play("walk");
+		_animatedSprite.FlipH = direction.X < 0; 
 		}
 
 		else

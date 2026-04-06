@@ -1,6 +1,6 @@
 using Godot;
 using System;
-using System.Security.Cryptography.X509Certificates;
+
 
 public partial class HurtBox : Area2D
 {
@@ -8,7 +8,7 @@ public partial class HurtBox : Area2D
 	{
 	Cooldown,
 	HitOnce, 
-	DisableHitBox,
+	DisableHitBox
 }
 [Export] public HurtBoxTypeEnum HurtBoxType = HurtBoxTypeEnum.Cooldown;
 [Signal] public delegate void HurtEventHandler(float damage);
@@ -27,11 +27,17 @@ private void OnEntered(Area2D area)
 	{
 		if (area.IsInGroup("attack"))
 		{
-			if(area is AttackZone attack)
-			{
-			
-			float damage = attack.Damage;
-			EmitSignal(SignalName.Hurt, damage);
+			Variant damageVariant = area.Get("damage");
+			float damage = 0.0f;
+
+
+		if (damageVariant.VariantType != Variant.Type.Nil)
+		{
+			damage = damageVariant.AsSingle();
+		}
+
+
+		EmitSignal(SignalName.Hurt, damage);
 
 		switch (HurtBoxType)
 		{
@@ -42,12 +48,11 @@ private void OnEntered(Area2D area)
 			
 			case HurtBoxTypeEnum.HitOnce:
 			if (area.HasMethod("tempdisable"))
-            {
-            area.Call("tempdisable");
-            }
-			    break;
+			{
+			area.Call("tempdisable");
+			}
+				break;
 		}
 	  }
 	}
   }
-}

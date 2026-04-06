@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://lbai5oipcniq"]
 
-[ext_resource type="Script" uid="uid://dv46xsa70f248" path="res://Utility/HurtBox.cs" id="1_flpa1"]
+[ext_resource type="Script" uid="uid://dv46xsa70f248" path="res://utility/HurtBox.cs" id="1_flpa1"]
 
 [node name="HurtBox" type="Area2D" unique_id=965366567]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_flpa1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1728805390]
