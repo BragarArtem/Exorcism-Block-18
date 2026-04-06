@@ -116,7 +116,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -179,9 +179,11 @@ size = Vector2(9, 19)
 script = ExtResource("1_38bgx")
 
 [node name="Goblin" type="AnimatedSprite2D" parent="." unique_id=354258737 groups=["attack"]]
+light_mask = 4
+visibility_layer = 4
 scale = Vector2(2.25, 2.25)
 sprite_frames = SubResource("SpriteFrames_ydrqk")
-animation = &"walk"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471884168]
 position = Vector2(0, 4)

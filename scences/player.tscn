@@ -434,6 +434,8 @@ scale = Vector2(3, 3)
 script = ExtResource("1_3j5lm")
 
 [node name="Hero" type="AnimatedSprite2D" parent="." unique_id=784152307]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(1.9999999, 5.333333)
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_cjlbh")
