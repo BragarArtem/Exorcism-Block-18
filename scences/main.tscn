@@ -3,9 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://4ycce3cogoq6" path="res://scences/player.tscn" id="1_i2nf4"]
 [ext_resource type="Texture2D" uid="uid://xm340i70vll4" path="res://spites/240_F_443693407_zQJa1GCqtY6C0OyrRjYGlMDi15XdTaW1.jpg" id="2_am3uj"]
 [ext_resource type="PackedScene" uid="uid://ddeth0fpx7lwm" path="res://scences/enemy.tscn" id="3_8edsk"]
+[ext_resource type="PackedScene" uid="uid://5pp35ffkfpgp" path="res://battleUI.tscn" id="4_3if0j"]
 
-[node name="World" type="Node2D" unique_id=477331173]
-position = Vector2(19, 38)
+[node name="World" type="Node" unique_id=1451604255]
+
+[node name="BattleUI" parent="." unique_id=412218201 instance=ExtResource("4_3if0j")]
+follow_viewport_enabled = false
 
 [node name="Player" parent="." unique_id=1414328437 groups=["player"] instance=ExtResource("1_i2nf4")]
 position = Vector2(997, 945)
