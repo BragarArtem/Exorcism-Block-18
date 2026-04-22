@@ -16,13 +16,12 @@ public partial class HurtBox : Area2D
 private CollisionShape2D _collisionShape;
 private Timer _disableTimer;
 public override void _Ready()
-	{
-		_collisionShape = GetNode<CollisionShape2D>("CollisionShape2D");
-		_disableTimer = GetNode<Timer>("DisableTimer");
-		AreaEntered += OnEntered;
-		_disableTimer.Timeout += () => _collisionShape.SetDeferred("disabled", false);
-} 
-
+{
+    _collisionShape = GetNode<CollisionShape2D>("CollisionShape2D");
+    _disableTimer = GetNode<Timer>("DisableTimer");
+    AreaEntered += OnEntered;
+    _disableTimer.Timeout += () => _collisionShape.SetDeferred("disabled", false);
+}
 private void OnEntered(Area2D area)
 	{
 		if (area.IsInGroup("attack"))

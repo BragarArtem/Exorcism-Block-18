@@ -7,18 +7,36 @@ public partial class Player : CharacterBody2D
   [Export] public float AttackRange = 150.0f;
   [Export] public float APS = 2.0f;
   [Export] public int Damage = 5;
+  [Export] public float MaxHP = 100.0f;
 
   private AnimatedSprite2D _hero;
   private string _currentDir = "down";
   private float _attackTimer = 0.0f;
   private bool _isAttacking = false;
   private Node2D _currentTarget;
+  private float _currentHP;
+  private HudController _hud;
 
   public override void _Ready()
   {
 	_hero = GetNode<AnimatedSprite2D>("Hero");
 	_hero.AnimationFinished += OnAnimationFinished;
+	var hurtBox = GetNode<Area2D>("HurtBox");
+	hurtBox.Connect("Hurt", Callable.From<float>(TakeDamage));
+	_hud = GetTree().GetFirstNodeInGroup("hud") as HudController;
+	_currentHP = MaxHP;
+	_hud?.UpdateHp(_currentHP, MaxHP);
   }
+public void TakeDamage(float damage)
+	{
+		_currentHP -= damage;
+		_currentHP = Mathf.Clamp(_currentHP, 0, MaxHP);
+		_hud?.UpdateHp(_currentHP, MaxHP);
+		if(_currentHP <= 0)
+		{
+			GD.Print("死");
+		}
+	}
 
   public override void _PhysicsProcess(double delta)
   {

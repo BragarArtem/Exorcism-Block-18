@@ -84,11 +84,14 @@ public partial class Goblin : CharacterBody2D
     private void CheckHit()
     {
         if (_player == null) return;
-        
         float distance = GlobalPosition.DistanceTo(_player.GlobalPosition);
         if (distance <= StopDistance + 15.0f) 
         {
-            GD.Print("Hit!");
+            if (_player.HasMethod("TakeDamage"))
+            {
+                _player.Call("TakeDamage", Damage);   
+            }
+            
         }
     }
 

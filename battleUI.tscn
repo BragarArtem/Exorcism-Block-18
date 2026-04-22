@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcngih6djlh6k" path="res://scripts/HudController.cs" id="1_usgjc"]
 
-[node name="BattleUI" type="CanvasLayer" unique_id=412218201 node_paths=PackedStringArray("HpBar", "ExpBar")]
+[node name="BattleUI" type="CanvasLayer" unique_id=412218201 node_paths=PackedStringArray("HpBar", "ExpBar") groups=["hud"]]
 follow_viewport_enabled = true
 script = ExtResource("1_usgjc")
 HpBar = NodePath("HpBar")
