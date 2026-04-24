@@ -29,7 +29,7 @@ public partial class MainMenuController : Control
     }
     private void OnPlayPressed()
     {
-        GetTree().ChangeSceneToFile("res://scences/main.tscn");
+        TransitionManager.GoTo("res://scences/main.tscn");
     }
     private void OnDifficultyPressed()
     {

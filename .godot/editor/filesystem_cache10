@@ -1,17 +1,20 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1777008217
-::res://scences/::1777008493
+::res://::1777011451
+::res://scences/::1777009769
 battleUI.tscn::PackedScene::2137593316237983167::1776853733::0::1::::<><><>0<>0<><>::uid://dcngih6djlh6k::::res://scripts/HudController.cs
-DeathScreen.tscn::PackedScene::8070473147525769712::1777008141::0::1::::<><><>0<>0<><>::uid://d1y78jvjiou21::::res://spites/You are dead.jpg
+DeathScreen.tscn::PackedScene::8070473147525769712::1777009769::0::1::::<><><>0<>0<><>::uid://d1owm0ksqxlqt::::res://scripts/DeathScreen.cs<>uid://d1y78jvjiou21::::res://spites/You are dead.jpg
 enemy.tscn::PackedScene::7379253537950850484::1776693958::0::1::::<><><>0<>0<><>::uid://dsf3bstqd72ga::::res://scripts/Enemies/Goblin.cs<>uid://db4jrp17dmj40::::res://spites/Attack1.png<>uid://dst5xyyvdeqf2::::res://spites/Walk.png<>uid://lbai5oipcniq::::res://utility/hurt_box.tscn<>uid://bxypoifpmm14v::::res://spites/Hurt.png<>uid://cg7mmppgm0s5i::::res://utility/hit_box.tscn
 Inventory.tscn::PackedScene::3488240843719975883::1777006584::0::1::::<><><>0<>0<><>::
 main.tscn::PackedScene::8463161713385073381::1777006592::0::1::::<><><>0<>0<><>::uid://4ycce3cogoq6::::res://scences/player.tscn<>uid://xm340i70vll4::::res://spites/240_F_443693407_zQJa1GCqtY6C0OyrRjYGlMDi15XdTaW1.jpg<>uid://ddeth0fpx7lwm::::res://scences/enemy.tscn<>uid://5pp35ffkfpgp::::res://scences/battleUI.tscn
 MainMenu.tscn::PackedScene::2951256127872020751::1777005819::0::1::::<><><>0<>0<><>::uid://0qtpbde0uuqr::::res://scripts/MainMenuController.cs<>uid://bubsc0the6gak::::res://spites/MainMenuBackgroundUpscaled.png<>uid://duibka45kbp8::::res://spites/cog.svg<>uid://hfbe62l1oq20::::res://spites/scroll-unfurled.svg<>uid://c1pwupwt7cfdh::::res://spites/SettingsPanel.png<>uid://bh4e1aqy7214y::::res://spites/knapsack.svg
 player.tscn::PackedScene::2085146790631472839::1776693958::0::1::::<><><>0<>0<><>::uid://b4yxm4b8p2tun::::res://scripts/Player/Player.cs<>uid://c33smra3nsker::::res://spites/Player.png<>uid://lbai5oipcniq::::res://utility/hurt_box.tscn
-::res://scripts/::1776992274
+Transition.tscn::PackedScene::7332520529006394539::1777011451::0::1::::<><><>0<>0<><>::uid://d3ll42hi067re::::res://scripts/fog_transition.gdshader
+::res://scripts/::1777010958
+DeathScreen.cs::CSharpScript::9014431806964637015::1777009833::0::1::::<>Control<><>0<>0<><>::
+fog_transition.gdshader::Shader::9147978932524773134::1777011031::0::1::::<><><>0<>0<><>::
 HudController.cs::CSharpScript::7326855653167145676::1776855592::0::1::::<>CanvasLayer<><>0<>0<><>::
-MainMenuController.cs::CSharpScript::1788931602160625521::1777005759::0::1::::<>Control<><>0<>0<><>::
-DeathScreen.cs::CSharpScript::9014431806964637015::1777008493::0::1::::<><><>0<>0<><>::
+MainMenuController.cs::CSharpScript::1788931602160625521::1777011449::0::1::::<>Control<><>0<>0<><>::
+TransitionManager.cs::CSharpScript::5911927897362462636::1777011362::0::1::::<>Node<><>0<>0<><>::
 ::res://scripts/Enemies/::1776693958
 Goblin.cs::CSharpScript::8434685962429402280::1776855512::0::1::::<>CharacterBody2D<><>0<>0<><>::
 ::res://scripts/Player/::1776693958

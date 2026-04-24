@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dcp6solvae0yx"]
+
+[ext_resource type="Shader" uid="uid://d3ll42hi067re" path="res://scripts/fog_transition.gdshader" id="1_rrhd5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jaa4l"]
+shader = ExtResource("1_rrhd5")
+shader_parameter/progress = 0.0
+shader_parameter/is_intro = true
+shader_parameter/center = Vector2(0.5, 0.5)
+
+[node name="Node" type="Node" unique_id=244882537]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=634040197]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=559008240]
+visible = false
+material = SubResource("ShaderMaterial_jaa4l")
+offset_right = 1152.0
+offset_bottom = 648.0
