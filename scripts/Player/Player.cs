@@ -35,8 +35,9 @@ public void TakeDamage(float damage)
 		if(_currentHP <= 0)
 		{
 			GD.Print("死");
+			GetTree().ChangeSceneToFile("res://scences/DeathScreen.tscn");
 		}
-	}
+	}	
 
   public override void _PhysicsProcess(double delta)
   {

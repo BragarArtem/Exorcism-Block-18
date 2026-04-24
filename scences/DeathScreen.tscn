@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dm8nrp0w0km0o"]
+
+[ext_resource type="Script" uid="uid://d1owm0ksqxlqt" path="res://scripts/DeathScreen.cs" id="1_s7plb"]
+[ext_resource type="Texture2D" uid="uid://d1y78jvjiou21" path="res://spites/You are dead.jpg" id="2_rf2vm"]
+
+[node name="DeathScreen" type="Control" unique_id=1000574408]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s7plb")
+
+[node name="deathScreen" type="TextureRect" parent="." unique_id=1351000239]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_rf2vm")
+expand_mode = 1
+
+[node name="afLabel" type="Label" parent="." unique_id=809935255]
+visible = false
+layout_mode = 0
+offset_left = 545.0
+offset_top = 340.0
+offset_right = 605.0
+offset_bottom = 365.0
+text = "As Fuck"
