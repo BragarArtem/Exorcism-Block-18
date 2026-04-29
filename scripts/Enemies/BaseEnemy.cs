@@ -1,0 +1,42 @@
+using Godot;
+using System;
+using System.Transactions;
+
+public partial class BaseEnemy : CharacterBody2D
+{
+
+[Export] public float Speed = 120f;
+[Export] public int Health = 10;
+[Export] public int Damage = 0;
+
+protected float currentHealth;
+protected Node2D player;
+
+    public override void _Ready()
+    {
+        currentHealth = Health;
+        player = GetTree().GetFirstNodeInGroup("player") as Node2D;
+    
+}
+public override void _PhysicsProcess(double delta)
+    {
+        if (player == null) return;
+
+        Vector2 direction = GlobalPosition.DirectionTo(player.GlobalPosition);
+        Velocity = direction * Speed;
+        MoveAndSlide();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+        protected virtual void Die()
+        {
+            QueueFree();
+    }
+}
