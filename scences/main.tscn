@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dstvbixy8fcc8"]
 
 [ext_resource type="PackedScene" uid="uid://4ycce3cogoq6" path="res://scences/player.tscn" id="1_i2nf4"]
-[ext_resource type="Texture2D" uid="uid://xm340i70vll4" path="res://spites/240_F_443693407_zQJa1GCqtY6C0OyrRjYGlMDi15XdTaW1.jpg" id="2_am3uj"]
+[ext_resource type="Texture2D" uid="uid://xm340i70vll4" path="res://spites/scenes/240_F_443693407_zQJa1GCqtY6C0OyrRjYGlMDi15XdTaW1.jpg" id="2_am3uj"]
 [ext_resource type="PackedScene" uid="uid://ddeth0fpx7lwm" path="res://scences/enemy.tscn" id="3_8edsk"]
 [ext_resource type="PackedScene" uid="uid://5pp35ffkfpgp" path="res://scences/battleUI.tscn" id="4_3if0j"]
 

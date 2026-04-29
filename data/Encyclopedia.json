@@ -1,0 +1,41 @@
+[
+    {
+        "id": "goblin",
+        "name": "Goblin",
+        "icon_path": "res://spites/goblin/goblin-head.svg",
+        "is_unlocked": false,
+        "lore": "Goblin - a vile scavenger that thrives in rot and darkness, preying on the weak with crude blades and feral cunning. Though small and cowardly alone, in numbers they become a relentless, shrieking tide of teeth and rusted steel.",
+        "stats": {
+            "hp": 15.0,
+            "damage": 3.0,
+            "critical_damage": 20,
+            "speed": 360.0
+        }
+    },
+    {
+        "id": "ogre",
+        "name": "Ogre",
+        "icon_path": "res://spites/Ogre/ogre-head.svg",
+        "is_unlocked": false,
+        "lore": "Ogre - a hulking mass of brute flesh and hunger, driven by instinct adn an endless craving for meat. Slow of thought but devastating in strength, it crushed armor, bone, and bodies alike with a single, careless swing.",
+        "stats": {
+            "hp": 500.0,
+            "damage": 100.0,
+            "critical_damage": 1000,
+            "speed": 120.0
+        }
+    },
+    {
+        "id": "goblin-archer",
+        "name": "Goblin-archer",
+        "icon_path": "res://spites/Goblin_Archer/imp-laugh.svg",
+        "is_unlocked": false,
+        "lore": "Goblin Archer - a twitching coward that lurks in the shadows, loosing notched, filth-smeared arrows with trembling hands. It seeks no glory, only the sadistic joy of watching a warrior rot from a single< infected wound dealt form the muck.",
+        "stats": {
+            "hp": 30.0,
+            "damage": 15.0,
+            "critical_damage": 30.0, 
+            "speed": 270.0
+        }        
+    }
+]

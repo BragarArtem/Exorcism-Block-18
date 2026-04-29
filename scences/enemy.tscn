@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://ddeth0fpx7lwm"]
 
 [ext_resource type="Script" uid="uid://dsf3bstqd72ga" path="res://scripts/Enemies/Goblin.cs" id="1_38bgx"]
-[ext_resource type="Texture2D" uid="uid://db4jrp17dmj40" path="res://spites/Attack1.png" id="2_muah7"]
-[ext_resource type="Texture2D" uid="uid://dst5xyyvdeqf2" path="res://spites/Walk.png" id="3_3i5ew"]
-[ext_resource type="PackedScene" uid="uid://lbai5oipcniq" path="res://utility/hurt_box.tscn" id="3_dxi00"]
-[ext_resource type="Texture2D" uid="uid://bxypoifpmm14v" path="res://spites/Hurt.png" id="3_uuuq7"]
-[ext_resource type="PackedScene" uid="uid://cg7mmppgm0s5i" path="res://utility/hit_box.tscn" id="4_muah7"]
+[ext_resource type="Texture2D" uid="uid://db4jrp17dmj40" path="res://spites/goblin/Attack1.png" id="2_muah7"]
+[ext_resource type="Texture2D" uid="uid://dst5xyyvdeqf2" path="res://spites/goblin/Walk.png" id="3_3i5ew"]
+[ext_resource type="PackedScene" uid="uid://lbai5oipcniq" path="res://Utility/hurt_box.tscn" id="3_dxi00"]
+[ext_resource type="Texture2D" uid="uid://bxypoifpmm14v" path="res://spites/goblin/Hurt.png" id="3_uuuq7"]
+[ext_resource type="PackedScene" uid="uid://cg7mmppgm0s5i" path="res://Utility/hit_box.tscn" id="4_muah7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uuuq7"]
 atlas = ExtResource("2_muah7")
