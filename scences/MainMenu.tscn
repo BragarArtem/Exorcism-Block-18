@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://bibu00mv6rdsh"]
 
 [ext_resource type="Script" uid="uid://0qtpbde0uuqr" path="res://scripts/MainMenuController.cs" id="1_m1m6g"]
-[ext_resource type="Texture2D" path="res://spites/MainMenuBackgroundUpscaled.png" id="2_huy1x"]
-[ext_resource type="Texture2D" path="res://spites/cog.svg" id="3_huy1x"]
-[ext_resource type="Texture2D" path="res://spites/scroll-unfurled.svg" id="4_00gqc"]
-[ext_resource type="Texture2D" path="res://spites/SettingsPanel.png" id="4_fu78s"]
-[ext_resource type="Texture2D" path="res://spites/knapsack.svg" id="5_fu78s"]
+[ext_resource type="Texture2D" uid="uid://bubsc0the6gak" path="res://spites/scenes/MainMenuBackgroundUpscaled.png" id="2_huy1x"]
+[ext_resource type="Texture2D" uid="uid://duibka45kbp8" path="res://spites/Icons/cog.svg" id="3_00gqc"]
+[ext_resource type="Texture2D" uid="uid://hfbe62l1oq20" path="res://spites/Icons/scroll-unfurled.svg" id="4_fu78s"]
+[ext_resource type="Texture2D" uid="uid://bh4e1aqy7214y" path="res://spites/Icons/knapsack.svg" id="5_y84ry"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00gqc"]
 
@@ -31,7 +30,7 @@ offset_left = 1092.0
 offset_top = 20.0
 offset_right = 1132.0
 offset_bottom = 60.0
-icon = ExtResource("3_huy1x")
+icon = ExtResource("3_00gqc")
 icon_alignment = 1
 expand_icon = true
 
@@ -50,7 +49,6 @@ offset_left = -45.0
 offset_top = -20.0
 offset_right = 255.0
 offset_bottom = 330.0
-texture = ExtResource("4_fu78s")
 expand_mode = 1
 
 [node name="SettingsContainer" type="VBoxContainer" parent="SettingsButton/SettingsPanel" unique_id=1747645799]
@@ -91,7 +89,7 @@ offset_left = 20.0
 offset_top = 350.0
 offset_right = 60.0
 offset_bottom = 390.0
-icon = ExtResource("4_00gqc")
+icon = ExtResource("4_fu78s")
 expand_icon = true
 
 [node name="InventoryButton" type="Button" parent="." unique_id=138656600 groups=["menu_buttons"]]
@@ -100,7 +98,7 @@ offset_left = 20.0
 offset_top = 300.0
 offset_right = 60.0
 offset_bottom = 340.0
-icon = ExtResource("5_fu78s")
+icon = ExtResource("5_y84ry")
 expand_icon = true
 
 [node name="CenterContainer" type="VBoxContainer" parent="." unique_id=1632712303]
