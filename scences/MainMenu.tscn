@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bibu00mv6rdsh"]
 
-[ext_resource type="Script" uid="uid://0qtpbde0uuqr" path="res://scripts/MainMenuController.cs" id="1_m1m6g"]
+[ext_resource type="Script" uid="uid://0qtpbde0uuqr" path="res://scripts/UI/MainMenuController.cs" id="1_m1m6g"]
 [ext_resource type="Texture2D" uid="uid://bubsc0the6gak" path="res://spites/scenes/MainMenuBackgroundUpscaled.png" id="2_huy1x"]
 [ext_resource type="Texture2D" uid="uid://duibka45kbp8" path="res://spites/Icons/cog.svg" id="3_00gqc"]
 [ext_resource type="Texture2D" uid="uid://hfbe62l1oq20" path="res://spites/Icons/scroll-unfurled.svg" id="4_fu78s"]
+[ext_resource type="Texture2D" uid="uid://c1pwupwt7cfdh" path="res://spites/scenes/SettingsPanel.png" id="4_y84ry"]
+[ext_resource type="Texture2D" uid="uid://08lw4abepqyh" path="res://spites/scenes/EncyclopediaBG.png" id="5_00gqc"]
 [ext_resource type="Texture2D" uid="uid://bh4e1aqy7214y" path="res://spites/Icons/knapsack.svg" id="5_y84ry"]
+[ext_resource type="Script" uid="uid://c56pfw35nhstc" path="res://scripts/UI/Encyclopedia/EncyclopediaController.cs" id="8_y84ry"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00gqc"]
 
@@ -49,6 +52,7 @@ offset_left = -45.0
 offset_top = -20.0
 offset_right = 255.0
 offset_bottom = 330.0
+texture = ExtResource("4_y84ry")
 expand_mode = 1
 
 [node name="SettingsContainer" type="VBoxContainer" parent="SettingsButton/SettingsPanel" unique_id=1747645799]
@@ -115,3 +119,31 @@ text = "Embrace the Dark"
 [node name="DifficultyButton" type="Button" parent="CenterContainer" unique_id=274875836 groups=["menu_buttons"]]
 layout_mode = 2
 text = "Fate’s Cruelty"
+
+[node name="EncyclopediaPanel" type="TextureRect" parent="." unique_id=677721523]
+visible = false
+layout_mode = 0
+offset_left = 90.0
+offset_top = 1.0
+offset_right = 1062.0
+offset_bottom = 649.0
+texture = ExtResource("5_00gqc")
+expand_mode = 1
+
+[node name="EncyclopediaController" type="Control" parent="EncyclopediaPanel" unique_id=1700610639 node_paths=PackedStringArray("EnemyList")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_y84ry")
+EnemyList = NodePath("ScrollContainer/EnemyList")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="EncyclopediaPanel/EncyclopediaController" unique_id=363582932]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 227.0
+offset_right = 889.0
+offset_bottom = 527.0
+
+[node name="EnemyList" type="GridContainer" parent="EncyclopediaPanel/EncyclopediaController/ScrollContainer" unique_id=805916532]
+layout_mode = 2
+columns = 2

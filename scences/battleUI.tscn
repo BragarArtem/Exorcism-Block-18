@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5pp35ffkfpgp"]
 
-[ext_resource type="Script" uid="uid://dcngih6djlh6k" path="res://scripts/HudController.cs" id="1_usgjc"]
+[ext_resource type="Script" uid="uid://dcngih6djlh6k" path="res://scripts/UI/HudController.cs" id="1_usgjc"]
 
 [node name="BattleUI" type="CanvasLayer" unique_id=412218201 node_paths=PackedStringArray("HpBar", "ExpBar") groups=["hud"]]
 follow_viewport_enabled = true

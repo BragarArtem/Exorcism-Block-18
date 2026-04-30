@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bwin6jng8w8t2"]
+
+[ext_resource type="Script" uid="uid://c4ip7r4e7010u" path="res://scripts/UI/Encyclopedia/EncyclopediaItemCard.cs" id="1_5wkrg"]
+
+[node name="EncyclopediaItemCard" type="Panel" unique_id=2040533330 node_paths=PackedStringArray("ItemIcon", "ItemName")]
+custom_minimum_size = Vector2(190, 220)
+offset_right = 190.0
+offset_bottom = 220.0
+script = ExtResource("1_5wkrg")
+ItemIcon = NodePath("ItemIcon")
+ItemName = NodePath("ItemName")
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=1526708564]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 170.0
+offset_bottom = 150.0
+expand_mode = 1
+
+[node name="ItemName" type="Label" parent="." unique_id=667489453]
+layout_mode = 0
+offset_top = 170.0
+offset_right = 190.0
+offset_bottom = 210.0

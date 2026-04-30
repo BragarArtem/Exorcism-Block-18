@@ -1,8 +1,12 @@
 using Godot;
 using System;
 
+public enum UIPanel {None, Settings, Encyclopedia}
+
 public partial class MainMenuController : Control
 {
+    private Panel _settingsPanel;
+    private Control _encyclopediaPanel;
     public override void _Ready()
     {
         SetupButton(GetNode<Button>("CenterContainer/PlayButton"), OnPlayPressed);
@@ -12,6 +16,8 @@ public partial class MainMenuController : Control
         SetupButton(GetNode<Button>("SettingsButton"), OnSettingsPressed);
         SetupButton(GetNode<Button>("SettingsButton/SettingsPanel/SettingsContainer/ExitButton"), OnExitPressed);
         GetNode<CheckButton>("SettingsButton/SettingsPanel/SettingsContainer/FullscreenCheckButton").Toggled += OnFullscreenTogled;
+        _settingsPanel = GetNode<Panel>("SettingsButton/SettingsPanel");
+        _encyclopediaPanel = GetNode<Control>("EncyclopediaPanel");
     }
     private void SetupButton(Button button, System.Action action)
     {
@@ -41,12 +47,25 @@ public partial class MainMenuController : Control
     }
     private void OnEncyclopediaButton()
     {
-        GD.Print("would be added soon");
+        if (_encyclopediaPanel.Visible)
+        {
+            OpenPanel(UIPanel.None);
+        }
+        else
+        {
+            OpenPanel(UIPanel.Encyclopedia);
+        }
     }
     private void OnSettingsPressed()
     {
-        var SettingsPanel = GetNode<Panel>("SettingsButton/SettingsPanel");
-        SettingsPanel.Visible = !SettingsPanel.Visible;
+        if (_settingsPanel.Visible)
+        {
+            OpenPanel(UIPanel.None);
+        }
+        else
+        {
+            OpenPanel(UIPanel.Settings);
+        }
     }
     private void OnExitPressed()
     {
@@ -61,6 +80,28 @@ public partial class MainMenuController : Control
         else
         {
             DisplayServer.WindowSetMode(DisplayServer.WindowMode.Maximized);
+        }
+    }
+    private void OpenPanel(UIPanel panel)
+    {
+        _settingsPanel.Visible = false;
+        _encyclopediaPanel.Visible = false;
+        switch (panel)
+        {
+            case UIPanel.Settings:
+               _settingsPanel.Visible = true;
+                break; 
+
+            case UIPanel.Encyclopedia:
+                _encyclopediaPanel.Visible = true;
+                break;
+        }
+    }
+    public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("ui_cancel"))
+        {
+            OpenPanel(UIPanel.None);
         }
     }
 }

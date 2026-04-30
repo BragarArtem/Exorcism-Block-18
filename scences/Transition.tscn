@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dcp6solvae0yx"]
 
-[ext_resource type="Shader" uid="uid://d3ll42hi067re" path="res://scripts/fog_transition.gdshader" id="1_rrhd5"]
+[ext_resource type="Shader" uid="uid://d3ll42hi067re" path="res://scripts/UI/Transition/fog_transition.gdshader" id="1_rrhd5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jaa4l"]
 shader = ExtResource("1_rrhd5")
