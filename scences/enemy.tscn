@@ -178,7 +178,7 @@ size = Vector2(9, 19)
 [node name="Enemy_goblin" type="CharacterBody2D" unique_id=140441111 groups=["Enemies"]]
 script = ExtResource("1_38bgx")
 
-[node name="Goblin" type="AnimatedSprite2D" parent="." unique_id=354258737 groups=["attack"]]
+[node name="Goblin" type="AnimatedSprite2D" parent="." unique_id=354258737 groups=["Enemies", "attack"]]
 light_mask = 4
 visibility_layer = 4
 scale = Vector2(2.25, 2.25)

@@ -39,14 +39,14 @@ public void TakeDamage(float damage)
 			// Test for save system
 
 			if (HasNode("/root/SaveManager"))
-        {
-            var saveManager = GetNode<SaveManager>("/root/SaveManager");
-            saveManager.CurrentSaveData.Gold += 100;
-            saveManager.CurrentSaveData.BestRunScore.Add(500); 
-            saveManager.CurrentSaveData.UnlockedEncyclopediaIds.Add("goblin_shaman"); 
+		{
+			var saveManager = GetNode<SaveManager>("/root/SaveManager");
+			saveManager.CurrentSaveData.Gold += 100;
+			saveManager.CurrentSaveData.BestRunScore.Add(500); 
+			saveManager.CurrentSaveData.UnlockedEncyclopediaIds.Add("goblin_shaman"); 
 
-            saveManager.SaveGame(saveManager.CurrentSaveData);
-        }
+			saveManager.SaveGame(saveManager.CurrentSaveData);
+		}
 			GetTree().ChangeSceneToFile("res://scences/DeathScreen.tscn");
 		}
 	}	
@@ -56,7 +56,7 @@ public void TakeDamage(float damage)
 	_attackTimer += (float)delta;
 
 	Vector2 mousePosition = GetGlobalMousePosition();
-    Vector2 directionToMouse = (mousePosition - GlobalPosition).Normalized();
+	Vector2 directionToMouse = (mousePosition - GlobalPosition).Normalized();
 	_currentTarget = GetClosestEnemy();
 	if (!_isAttacking)
 	{
@@ -117,15 +117,15 @@ public void TakeDamage(float damage)
   private void UpdateDirection(Vector2 dir)
   {
 	if (Mathf.Abs(dir.X) > Mathf.Abs(dir.Y))
-    {
-        _currentDir = "right";
-        _hero.FlipH = dir.X < 0;
-    }
-    else
-    {
-        _currentDir = dir.Y > 0 ? "down" : "up";
-        _hero.FlipH = false;
-    }
+	{
+		_currentDir = "right";
+		_hero.FlipH = dir.X < 0;
+	}
+	else
+	{
+		_currentDir = dir.Y > 0 ? "down" : "up";
+		_hero.FlipH = false;
+	}
 }
 
   private void UpdateAnimations(Vector2 inputDir)
