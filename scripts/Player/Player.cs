@@ -54,13 +54,20 @@ public void TakeDamage(float damage)
   public override void _PhysicsProcess(double delta)
   {
 	_attackTimer += (float)delta;
+
+	Vector2 mousePosition = GetGlobalMousePosition();
+    Vector2 directionToMouse = (mousePosition - GlobalPosition).Normalized();
 	_currentTarget = GetClosestEnemy();
+	if (!_isAttacking)
+	{
+	  UpdateDirection(directionToMouse);
+	}
 
 	if (_currentTarget != null && IsInstanceValid(_currentTarget) && !_isAttacking)
 	{
 	  if (GlobalPosition.DistanceTo(_currentTarget.GlobalPosition) <= AttackRange && _attackTimer >= 1.0f / APS)
 	  {
-		PerformAttackSequence();
+		PerformAttackSequence(directionToMouse);
 		_attackTimer = 0.0f;
 	  }
 	}
@@ -70,31 +77,29 @@ public void TakeDamage(float damage)
 	  MoveAndSlide();
 	if (!_isAttacking)
 	{
-	  UpdateDirection(inputDir);
 	  UpdateAnimations(inputDir);
 	}
   }
 
-  private void PerformAttackSequence()
+  private void PerformAttackSequence(Vector2 directionToMouse)
   {
 	_isAttacking = true;
-	Vector2 dirToTarget = (_currentTarget.GlobalPosition - GlobalPosition).Normalized();
 	
-	if (Mathf.Abs(dirToTarget.X) > Mathf.Abs(dirToTarget.Y))
+	if (Mathf.Abs(directionToMouse.X) > Mathf.Abs(directionToMouse.Y))
 	{
-	  _hero.FlipH = dirToTarget.X < 0;
+	  _hero.FlipH = directionToMouse.X < 0;
 	  _currentDir = "right";
 	}
 	else
 	{
 	  _hero.FlipH = false;
-	  _currentDir = dirToTarget.Y > 0 ? "down" : "up";
+	  _currentDir = directionToMouse.Y > 0 ? "down" : "up";
 	}
 
 	_hero.Play($"Attack_{_currentDir}");
 	_hero.SpeedScale = APS;
 
-	if (_currentTarget.HasMethod("TakeDamage"))
+	if (_currentTarget != null && IsInstanceValid(_currentTarget) && _currentTarget.HasMethod("TakeDamage"))
 	{
 	  _currentTarget.Call("TakeDamage", Damage);
 	}
@@ -109,15 +114,19 @@ public void TakeDamage(float damage)
 	}
   }
 
-  private void UpdateDirection(Vector2 inputDir)
+  private void UpdateDirection(Vector2 dir)
   {
-	if (inputDir.Y > 0) _currentDir = "down";
-	else if (inputDir.Y < 0) _currentDir = "up";
-	else if (inputDir.X != 0) _currentDir = "right";
-
-	if (inputDir.X < 0) _hero.FlipH = true;
-	else if (inputDir.X > 0) _hero.FlipH = false;
-  }
+	if (Mathf.Abs(dir.X) > Mathf.Abs(dir.Y))
+    {
+        _currentDir = "right";
+        _hero.FlipH = dir.X < 0;
+    }
+    else
+    {
+        _currentDir = dir.Y > 0 ? "down" : "up";
+        _hero.FlipH = false;
+    }
+}
 
   private void UpdateAnimations(Vector2 inputDir)
   {

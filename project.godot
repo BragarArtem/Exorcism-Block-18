@@ -21,7 +21,6 @@ SaveManager="*uid://bouw45n5xndv1"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [dotnet]
