@@ -48,7 +48,7 @@ public static class DataStreamReader
                 EncyclopediaEntry entry = null;
                 try
                 {
-                  entry = JsonSerializer.Deserialize<EncyclopediaEntry>(json);
+                entry = JsonSerializer.Deserialize<EncyclopediaEntry>(json);
 
                 } catch(Exception e)
                 {

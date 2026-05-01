@@ -3,7 +3,7 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-  [Export] public float Speed = 300.0f;
+  [Export] public float Speed = 67.0f;
   [Export] public float AttackRange = 150.0f;
   [Export] public float APS = 2.0f;
   [Export] public int Damage = 5;
@@ -35,6 +35,18 @@ public void TakeDamage(float damage)
 		if(_currentHP <= 0)
 		{
 			GD.Print("死");
+			
+			// Test for save system
+
+			if (HasNode("/root/SaveManager"))
+        {
+            var saveManager = GetNode<SaveManager>("/root/SaveManager");
+            saveManager.CurrentSaveData.Gold += 100;
+            saveManager.CurrentSaveData.BestRunScore.Add(500); 
+            saveManager.CurrentSaveData.UnlockedEncyclopediaIds.Add("goblin_shaman"); 
+
+            saveManager.SaveGame(saveManager.CurrentSaveData);
+        }
 			GetTree().ChangeSceneToFile("res://scences/DeathScreen.tscn");
 		}
 	}	

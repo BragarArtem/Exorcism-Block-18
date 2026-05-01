@@ -9,7 +9,7 @@
 			"hp": 15.0,
 			"damage": 3.0,
 			"critical_damage": 20,
-			"speed": 360.0
+			"speed": 80.0
 		}
 	},
 	{
@@ -22,7 +22,7 @@
 			"hp": 500.0,
 			"damage": 100.0,
 			"critical_damage": 1000,
-			"speed": 120.0
+			"speed": 26.0
 		}
 	},
 	{
@@ -35,7 +35,7 @@
 			"hp": 30.0,
 			"damage": 15.0,
 			"critical_damage": 30.0, 
-			"speed": 270.0
+			"speed": 60.0
 		}        
 	}
 ]

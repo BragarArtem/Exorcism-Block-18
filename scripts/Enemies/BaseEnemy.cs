@@ -5,9 +5,9 @@ using System.Transactions;
 public partial class BaseEnemy : CharacterBody2D
 {
 
-[Export] public float Speed = 120f;
-[Export] public int Health = 10;
-[Export] public int Damage = 0;
+[Export] public float Speed = 120.0f;
+[Export] public float Health = 100.0f;
+[Export] public float Damage = 0;
 
 protected float currentHealth;
 protected Node2D player;
