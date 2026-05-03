@@ -4,7 +4,7 @@ using System;
 public partial class Attack : Node2D
 {
 [Export] public float AttackRange = 150.0f;
-[Export] public float APS = 2.0f; // APS - Attacks per secomnd 
+[Export] public float APS = 2.0f; // APS - Attacks per second 
 [Export] public int Damage = 5;
 
 public float _attackTimer = 0.0f;
@@ -50,9 +50,6 @@ public override void _PhysicsProcess(double delta)
 		
 		_sprite.Play(animName);
 		_sprite.SpeedScale = APS; 
-
-		GD.Print($"Attack: {_currentTarget.Name}! Hit: {Damage}");
-
 	}
 	private string GetAttackAnimationName(Vector2 direction)
 	{
