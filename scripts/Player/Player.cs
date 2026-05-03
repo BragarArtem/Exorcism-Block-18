@@ -12,9 +12,9 @@ public partial class Player : CharacterBody2D
 	//Attack parameters
 	[Export] public float APS = 2.0f;
 	[Export] public float Damage = 5.0f;
-	[Export] public AttackType CurrentAttackType = AttackType.Single;
+	[Export] public AttackType CurrentAttackType = AttackType.Plural;
 	[Export] public float PassiveAPS = 1.0f;
-	[Export] public float PassiveDamage = 1.0f;
+	[Export] public float PassiveDamage = 3.0f;
 	[Export] public bool PassiveIsEnabled = false;
 	//Private fields
 	private AnimatedSprite2D _hero;
@@ -82,7 +82,7 @@ public partial class Player : CharacterBody2D
 		PlayAttackAnimation(dir);
 		var targets = GetAllInCone(dir);
 		if (targets.Count == 0) return;
-		foreach(var target in targets){target.Call("TakeDamage", (float)Damage);}	
+		foreach(var target in targets){if(target.HasMethod("TakeDamage")){target.Call("TakeDamage", (float)Damage);}}	
 	}
 	private void HandlePassiveAttack()
 	{

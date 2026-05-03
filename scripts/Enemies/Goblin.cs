@@ -8,10 +8,10 @@ public partial class Goblin : CharacterBody2D
 	[Export] public float Speed = 80.0f;
 	[Export] public float StopDistance = 50.0f;
 	[Export] public float AttackCooldown = 1.5f;
-	[Export] public int Damage = 10;
+	[Export] public float Damage = 10.0f;
 
 // testing death logic
-	[Export] public int MaxHP = 10;
+	[Export] public float MaxHP = 10.0f;
 	[Export] public float XPValue = 10.0f;
 	[Export] private Area2D _hurtBox;
 

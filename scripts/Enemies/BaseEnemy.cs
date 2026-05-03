@@ -27,7 +27,7 @@ public override void _PhysicsProcess(double delta)
         MoveAndSlide();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)
