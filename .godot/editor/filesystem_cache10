@@ -1,27 +1,28 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1777663927
+::res://::1777808097
 ::res://data/::1777646925
 Encyclopedia.json::JSON::-1::1777635225::0::1::::<><><>0<>0<><>::
 SaveData.json::JSON::-1::1777647048::0::1::::<><><>0<>0<><>::
-::res://scences/::1777659605
+::res://scences/::1777773458
 battleUI.tscn::PackedScene::2137593316237983167::1777633109::0::1::::<><><>0<>0<><>::uid://dcngih6djlh6k::::res://scripts/UI/HudController.cs
 DeathScreen.tscn::PackedScene::8070473147525769712::1777654988::0::1::::<><><>0<>0<><>::uid://d1owm0ksqxlqt::::res://scripts/UI/DeathScreen.cs<>uid://d1y78jvjiou21::::res://sprites/scenes/You are dead.jpg
 EncyclopediaItemCard.tscn::PackedScene::3947935439389531365::1777633109::0::1::::<><><>0<>0<><>::uid://c4ip7r4e7010u::::res://scripts/UI/Encyclopedia/EncyclopediaItemCard.cs
 enemy.tscn::PackedScene::7379253537950850484::1777659605::0::1::::<><><>0<>0<><>::uid://dsf3bstqd72ga::::res://scripts/Enemies/Goblin.cs<>uid://db4jrp17dmj40::::res://sprites/goblin/Attack1.png<>uid://dst5xyyvdeqf2::::res://sprites/goblin/Walk.png<>uid://lbai5oipcniq::::res://Utility/hurt_box.tscn<>uid://bxypoifpmm14v::::res://sprites/goblin/Hurt.png<>uid://cg7mmppgm0s5i::::res://Utility/hit_box.tscn
 Inventory.tscn::PackedScene::3488240843719975883::1777633109::0::1::::<><><>0<>0<><>::
-main.tscn::PackedScene::8463161713385073381::1777654988::0::1::::<><><>0<>0<><>::uid://4ycce3cogoq6::::res://scences/player.tscn<>uid://xm340i70vll4::::res://sprites/scenes/240_F_443693407_zQJa1GCqtY6C0OyrRjYGlMDi15XdTaW1.jpg<>uid://ddeth0fpx7lwm::::res://scences/enemy.tscn<>uid://5pp35ffkfpgp::::res://scences/battleUI.tscn
+main.tscn::PackedScene::8463161713385073381::1777773458::0::1::::<><><>0<>0<><>::uid://4ycce3cogoq6::::res://scences/player.tscn<>uid://xm340i70vll4::::res://sprites/scenes/240_F_443693407_zQJa1GCqtY6C0OyrRjYGlMDi15XdTaW1.jpg<>uid://ddeth0fpx7lwm::::res://scences/enemy.tscn<>uid://5pp35ffkfpgp::::res://scences/battleUI.tscn
 MainMenu.tscn::PackedScene::2951256127872020751::1777654988::0::1::::<><><>0<>0<><>::uid://0qtpbde0uuqr::::res://scripts/UI/MainMenuController.cs<>uid://bubsc0the6gak::::res://sprites/scenes/MainMenuBackgroundUpscaled.png<>uid://duibka45kbp8::::res://sprites/Icons/cog.svg<>uid://hfbe62l1oq20::::res://sprites/Icons/scroll-unfurled.svg<>uid://c1pwupwt7cfdh::::res://sprites/scenes/SettingsPanel.png<>uid://08lw4abepqyh::::res://sprites/scenes/EncyclopediaBG.png<>uid://bh4e1aqy7214y::::res://sprites/Icons/knapsack.svg<>uid://c56pfw35nhstc::::res://scripts/UI/Encyclopedia/EncyclopediaController.cs
-player.tscn::PackedScene::2085146790631472839::1777654988::0::1::::<><><>0<>0<><>::uid://b4yxm4b8p2tun::::res://scripts/Player/Player.cs<>uid://c33smra3nsker::::res://sprites/Player/Player.png<>uid://lbai5oipcniq::::res://Utility/hurt_box.tscn
+player.tscn::PackedScene::2085146790631472839::1777764851::0::1::::<><><>0<>0<><>::uid://b4yxm4b8p2tun::::res://scripts/Player/Player.cs<>uid://c33smra3nsker::::res://sprites/Player/Player.png<>uid://lbai5oipcniq::::res://Utility/hurt_box.tscn
 Transition.tscn::PackedScene::7332520529006394539::1777650998::0::1::::<><><>0<>0<><>::uid://d3ll42hi067re::::res://scripts/UI/Transition/fog_transition.gdshader
 ::res://scripts/::1777633109
 ::res://scripts/Data/::1777645540
 DataStreamReader.cs::CSharpScript::1056648857896249341::1777633135::0::1::::<><><>0<>0<><>::
 SaveData.cs::CSharpScript::6283172763119415014::1777645324::0::1::::<><><>0<>0<><>::
 SaveManager.cs::CSharpScript::3411741208748129480::1777652079::0::1::::<>Node<><>0<>0<><>::
-::res://scripts/Enemies/::1777659232
+::res://scripts/Enemies/::1777759434
 BaseDeathLogic.cs::CSharpScript::4742059507823829760::1777659232::0::1::::<><><>0<>0<><>::
 BaseEnemy.cs::CSharpScript::2291255649037943143::1777635753::0::1::::<>CharacterBody2D<><>0<>0<><>::
 Goblin.cs::CSharpScript::8434685962429402280::1777659795::0::1::::<>CharacterBody2D<><>0<>0<><>::
+SpawnLogic.cs::CSharpScript::8623607766470767539::1777760262::0::1::::<><><>0<>0<><>::
 ::res://scripts/Player/::1777659095
 Attack.cs::CSharpScript::3864019426572491255::1777633109::0::1::::<>Node2D<><>0<>0<><>::
 Health.cs::CSharpScript::2369705134145294904::1777633109::0::1::::<><><>0<>0<><>::
@@ -37,7 +38,7 @@ EncyclopediaItemCard.cs::CSharpScript::6825801693139871574::1777633109::0::1::::
 ::res://scripts/UI/Transition/::1777633109
 fog_transition.gdshader::Shader::9147978932524773134::1777633109::0::1::::<><><>0<>0<><>::
 TransitionManager.cs::CSharpScript::5911927897362462636::1777633109::0::1::::<>Node<><>0<>0<><>::
-::res://sprites/::1777633111
+::res://sprites/::1777666575
 ::res://sprites/goblin/::1777654991
 Attack1.png::CompressedTexture2D::7289895490489943079::1777633111::1777654991::1::::<><><>0<>0<>5c4e499fbc7024ca46bb43a47f2ed197<>res://.godot/imported/Attack1.png-947cc3495954bd88993c1e747c5d8588.ctex::
 Death.png::CompressedTexture2D::5944928055112055029::1777633111::1777654991::1::::<><><>0<>0<>70bb2acbc360c684ea662fb75fccb822<>res://.godot/imported/Death.png-e0184fc5e11373955ae81a139c1c593c.ctex::
@@ -712,6 +713,8 @@ icon_wall.png::CompressedTexture2D::8795301263481727112::1777633111::1777654990:
 icon_wheel.png::CompressedTexture2D::1756729032491171026::1777633111::1777654990::1::::<><><>0<>0<>9121dc22cf405e66b3f45b4c0c3b086e<>res://.godot/imported/icon_wheel.png-d4eaa363cdb56549c65a0f04fd72ef79.ctex::
 icon_wind.png::CompressedTexture2D::8655743381689748526::1777633111::1777654990::1::::<><><>0<>0<>04ac3d7907523ad880ee83e3fa8ee1b9<>res://.godot/imported/icon_wind.png-27bdeb6f7b8daf76395b6f95bad0bc3d.ctex::
 robot.png::CompressedTexture2D::5359443487651913937::1777633111::1777654990::1::::<><><>0<>0<>9a57e01971d16b50573d0f4b9e813215<>res://.godot/imported/robot.png-2e99d729b3addb95022e6239c021299a.ctex::
+::res://sprites/Loot & XP/::1777669634
+XpCrystal.png::CompressedTexture2D::462688077444558842::1777669372::1777669634::1::::<><><>0<>0<>3569da84b8576c68eaa0951625cd0097<>res://.godot/imported/XpCrystal.png-7ce9ded35789c4bf907e7fe72bd9a8f5.ctex::
 ::res://sprites/Ogre/::1777654990
 ogre-head.svg::CompressedTexture2D::1564238578813111839::1777633111::1777654990::1::::<><><>0<>0<>4234c77ff615c5fef996f6ecec4251b7<>res://.godot/imported/ogre-head.svg-45706f38b9c5c6e2a221f509fc10ffd0.ctex::
 ::res://sprites/Player/::1777654990
@@ -724,9 +727,9 @@ MainMenuBackground.jpg::CompressedTexture2D::5298353153924164771::1777633111::17
 MainMenuBackgroundUpscaled.png::CompressedTexture2D::3793359754425070842::1777633111::1777654991::1::::<><><>0<>0<>9928b42dfb63b26f4655b70c2993a4ea<>res://.godot/imported/MainMenuBackgroundUpscaled.png-5ffdb1ad3612290344e43f757f6c88b5.ctex::
 SettingsPanel.png::CompressedTexture2D::6630089280746970481::1777633111::1777654992::1::::<><><>0<>0<>aef265d4c11be56638b691fb4c519e0e<>res://.godot/imported/SettingsPanel.png-436f73d6fa9eab3ab867e002b9aee4c9.ctex::
 You are dead.jpg::CompressedTexture2D::9035719432304196048::1777633111::1777654990::1::::<><><>0<>0<>516781eafee31dc0e01f50f4eb0f5257<>res://.godot/imported/You are dead.jpg-872faab75365c5f296c52e01a8fd8035.ctex::
-::res://Utility/::1777660754
+::res://Utility/::1777664052
 HitBox.cs::CSharpScript::810102647317224334::1777633109::0::1::::<>Area2D<><>0<>0<><>::
 hit_box.tscn::PackedScene::5260785362096336980::1777660754::0::1::::<><><>0<>0<><>::uid://lsojiyjifd3c::::res://Utility/HitBox.cs
 HurtBox.cs::CSharpScript::8695018969289163039::1777660494::0::1::::<>Area2D<><>0<>0<><>::
 hurt_box.tscn::PackedScene::774157541835043668::1777633109::0::1::::<><><>0<>0<><>::uid://dv46xsa70f248::::res://utility/HurtBox.cs
-XPCalculator.cs::CSharpScript::6535568402006363528::1777663765::0::1::::<><><>0<>0<><>::
+LvlProgression.cs::CSharpScript::8572988323112019047::1777664493::0::1::::<>Node<><>0<>0<><>::
