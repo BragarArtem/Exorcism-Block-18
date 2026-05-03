@@ -4,6 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://eiswnvx8f7pa" path="res://sprites/scenes/backGround.png" id="3_3if0j"]
 [ext_resource type="PackedScene" uid="uid://ddeth0fpx7lwm" path="res://scences/enemy.tscn" id="3_8edsk"]
 [ext_resource type="PackedScene" uid="uid://5pp35ffkfpgp" path="res://scences/battleUI.tscn" id="4_3if0j"]
+[ext_resource type="Script" uid="uid://du4ltbl2lupw2" path="res://scripts/Enemies/SpawnLogic.cs" id="5_41s58"]
+
+[sub_resource type="Curve2D" id="Curve2D_3if0j"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 163.72568, 13.595154, 0, 0, 0, 0, 164.65862, -84.59275, 0, 0, 0, 0, 0.30376434, -85.02147, 0, 0, 0, 0, 0.60752106, 14.439224)
+}
+point_count = 4
 
 [node name="World" type="Node" unique_id=1451604255]
 
@@ -12,6 +20,15 @@ follow_viewport_enabled = false
 
 [node name="Player" parent="." unique_id=1414328437 groups=["player"] instance=ExtResource("1_i2nf4")]
 position = Vector2(1024, 1024)
+
+[node name="Path2D" type="Path2D" parent="Player" unique_id=848517391]
+position = Vector2(-173.98451, 85.98605)
+scale = Vector2(2.1437354, 2.33258)
+curve = SubResource("Curve2D_3if0j")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=419516408]
+position = Vector2(163.72568, 13.595154)
+rotation = -1.561295
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1216297139]
 z_index = -1
@@ -26,5 +43,15 @@ region_rect = Rect2(0, 0, 40960, 40960)
 [node name="Enemy_goblin" parent="." unique_id=140441111 instance=ExtResource("3_8edsk")]
 position = Vector2(615, 810)
 
+<<<<<<< HEAD
+[node name="Spawner" type="Node2D" parent="." unique_id=2097309945]
+script = ExtResource("5_41s58")
+
+[node name="Timer" type="Timer" parent="Spawner" unique_id=1821105229]
+autostart = true
+
+[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="OnEnemyTimerTimeout"]
+=======
 [node name="Enemy_goblin2" parent="." unique_id=1725297831 instance=ExtResource("3_8edsk")]
 position = Vector2(610, 1066)
+>>>>>>> 1e4b807d8a1f82ed285e10cc71d1c0176d890db3

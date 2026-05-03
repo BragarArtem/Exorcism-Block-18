@@ -135,6 +135,8 @@ public partial class Goblin : CharacterBody2D
 	}
 	private void Die()
 	{
+		SetPhysicsProcess(false);
+		SetProcess(false);
 		EmitSignal(SignalName.Died, XPValue);
 		QueueFree(); 
 	}
