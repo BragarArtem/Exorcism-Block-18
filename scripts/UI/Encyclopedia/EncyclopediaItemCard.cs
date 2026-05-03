@@ -5,7 +5,7 @@ public partial class EncyclopediaItemCard : Panel
 {
     [Export] public TextureRect ItemIcon;
     [Export] public Label ItemName;
-    private const string UnknownIconPath = "res://spites/Icons/cultist.svg";
+    private const string UnknownIconPath = "res://sprites/Icons/cultist.svg";
     public void Setup(EncyclopediaEntry entry)
     {
         if(entry.IsUnlocked == false)

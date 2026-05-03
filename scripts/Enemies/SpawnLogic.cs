@@ -9,7 +9,7 @@ public partial class SpawnLogic : Node2D
 {
 
     _rng.Randomize();
-   }
+    }
     private void OnEnemyTimerTimeout()
     {
 
@@ -19,7 +19,7 @@ public partial class SpawnLogic : Node2D
     enemyInstance.GlobalPosition = PathFollow.GlobalPosition;
 
     if (enemyInstance is Goblin goblin)
-     {
+    {
     goblin.Connect(Goblin.SignalName.Died, new Callable (this, MethodName.OnEnemyDied));
     }
     GetParent().AddChild(enemyInstance);

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b4yxm4b8p2tun" path="res://scripts/Player/Player.cs" id="1_3j5lm"]
 [ext_resource type="Texture2D" uid="uid://c33smra3nsker" path="res://sprites/Player/Player.png" id="2_efpdg"]
 [ext_resource type="PackedScene" uid="uid://lbai5oipcniq" path="res://Utility/hurt_box.tscn" id="3_efpdg"]
+[ext_resource type="Script" uid="uid://m6dy0wtt76vq" path="res://scripts/Player/AttackZone.cs" id="4_u4p4d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
 atlas = ExtResource("2_efpdg")
@@ -430,7 +431,6 @@ size = Vector2(8.500002, 15)
 
 [node name="Player" type="CharacterBody2D" unique_id=1414328437]
 position = Vector2(0, -39)
-scale = Vector2(3, 3)
 script = ExtResource("1_3j5lm")
 
 [node name="Hero" type="AnimatedSprite2D" parent="." unique_id=784152307]
@@ -449,11 +449,11 @@ shape = SubResource("CapsuleShape2D_3j5lm")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=866104682]
 position = Vector2(0, 5.6666665)
-zoom = Vector2(1.2, 1.2)
+zoom = Vector2(2.2, 2.2)
 limit_left = 0
 limit_top = 0
-limit_right = 2000
-limit_bottom = 2000
+limit_right = 2048
+limit_bottom = 2048
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
@@ -466,7 +466,8 @@ collision_mask = 2
 position = Vector2(1.5414625, -6.4035416)
 shape = SubResource("RectangleShape2D_u4p4d")
 
-[node name="AttackZone" type="Area2D" parent="." unique_id=2003769222]
+[node name="AttackZone" type="Polygon2D" parent="." unique_id=484553369]
+script = ExtResource("4_u4p4d")
 
 [connection signal="Hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
 
