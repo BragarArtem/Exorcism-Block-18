@@ -32,4 +32,16 @@ public partial class AttackZone : Polygon2D
 	{
 		Rotation = direction.Angle();
 	}
+	public Vector2 GetForwardDirection()
+	{
+		return Vector2.Right.Rotated(Rotation);
+	}
+	public void ShowCooldown()
+	{
+		Modulate = new Color(0.9f,0.3f,0.3f, 0.4f);
+	}
+		public void ShowReady()
+	{
+		Modulate = new Color(0.3f,0.9f,0.5f, 0.4f);
+	}
 }
