@@ -9,6 +9,7 @@ public partial class SaveManager : Node
     public override void _Ready()
     {
         CurrentSaveData = LoadGame();
+        DifficultySettings.Apply(CurrentSaveData.Difficulty);
     }
 
     public override void _UnhandledInput(InputEvent @event)

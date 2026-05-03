@@ -16,6 +16,8 @@ protected Node2D player;
     {
         currentHealth = Health;
         player = GetTree().GetFirstNodeInGroup("player") as Node2D;
+        currentHealth = Health * DifficultySettings.HPMultiplier;
+        Damage = Damage * DifficultySettings.DamageMultiplier;
     
 }
 public override void _PhysicsProcess(double delta)

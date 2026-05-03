@@ -1,23 +1,25 @@
 using Godot;
 using System;
 
-public enum UIPanel {None, Settings, Encyclopedia}
+public enum UIPanel {None, Settings, Encyclopedia, Difficulty}
 
 public partial class MainMenuController : Control
 {
-    private Panel _settingsPanel;
-    private Control _encyclopediaPanel;
+    private TextureRect _settingsPanel;
+    private TextureRect _encyclopediaPanel;
+    private TextureRect _difficultyPanel;
     public override void _Ready()
     {
-        SetupButton(GetNode<Button>("CenterContainer/PlayButton"), OnPlayPressed);
-        SetupButton(GetNode<Button>("CenterContainer/DifficultyButton"), OnDifficultyPressed);
-        SetupButton(GetNode<Button>("InventoryButton"), OnInventoryPressed);
-        SetupButton(GetNode<Button>("EncyclopediaButton"), OnEncyclopediaButton);
-        SetupButton(GetNode<Button>("SettingsButton"), OnSettingsPressed);
-        SetupButton(GetNode<Button>("SettingsButton/SettingsPanel/SettingsContainer/ExitButton"), OnExitPressed);
-        GetNode<CheckButton>("SettingsButton/SettingsPanel/SettingsContainer/FullscreenCheckButton").Toggled += OnFullscreenTogled;
-        _settingsPanel = GetNode<Panel>("SettingsButton/SettingsPanel");
-        _encyclopediaPanel = GetNode<Control>("EncyclopediaPanel");
+        SetupButton(GetNode<Button>("MainMenuButtons/PlayButton"), OnPlayPressed);
+        SetupButton(GetNode<Button>("MainMenuButtons/DifficultyButton"), OnDifficultyPressed);
+        SetupButton(GetNode<Button>("MainMenuButtons/InventoryButton"), OnInventoryPressed);
+        SetupButton(GetNode<Button>("MainMenuButtons/EncyclopediaButton"), OnEncyclopediaButton);
+        SetupButton(GetNode<Button>("MainMenuButtons/SettingsButton"), OnSettingsPressed);
+        SetupButton(GetNode<Button>("MainMenuButtons/ExitButton"), OnExitPressed);
+        GetNode<CheckButton>("SettingsPanel/SettingsVBox/FullscreenCheckButton").Toggled += OnFullscreenTogled;
+        _settingsPanel = GetNode<TextureRect>("SettingsPanel"); 
+        _encyclopediaPanel = GetNode<TextureRect>("EncyclopediaPanel");
+        _difficultyPanel = GetNode<TextureRect>("DifficultyPanel");
     }
     private void SetupButton(Button button, System.Action action)
     {
@@ -39,7 +41,14 @@ public partial class MainMenuController : Control
     }
     private void OnDifficultyPressed()
     {
-        GD.Print("would be added soon");
+        if (_difficultyPanel.Visible)
+        {
+            OpenPanel(UIPanel.None);
+        }
+        else
+        {
+            OpenPanel(UIPanel.Difficulty);
+        }
     }
     private void OnInventoryPressed()
     {
@@ -86,6 +95,7 @@ public partial class MainMenuController : Control
     {
         _settingsPanel.Visible = false;
         _encyclopediaPanel.Visible = false;
+        _difficultyPanel.Visible = false;
         switch (panel)
         {
             case UIPanel.Settings:
@@ -94,6 +104,9 @@ public partial class MainMenuController : Control
 
             case UIPanel.Encyclopedia:
                 _encyclopediaPanel.Visible = true;
+                break;
+            case UIPanel.Difficulty:
+                _difficultyPanel.Visible = true;
                 break;
         }
     }

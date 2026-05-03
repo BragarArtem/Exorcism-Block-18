@@ -9,4 +9,5 @@ public class SaveData
     public int Gold { get; set; } = 0;
     public List <int> BestRunScore {get; set;} = new List<int>();
     public List <string> UnlockedEncyclopediaIds {get; set;} = new List<string>();
+    public string Difficulty {get; set;} = "Cursed";
 }
