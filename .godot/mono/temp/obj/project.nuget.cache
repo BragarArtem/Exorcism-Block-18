@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "c0NVJ5qvP0Y=",
+  "dgSpecHash": "fT+qs4UhLR8=",
   "success": true,
-  "projectFilePath": "E:\\Exorcism-Block-18\\Exorcism-Block-18\\Exorcism-Block-18.csproj",
+  "projectFilePath": "C:\\Exorcism-Block-18\\Exorcism-Block-18.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\User\\.nuget\\packages\\godot.sourcegenerators\\4.6.0\\godot.sourcegenerators.4.6.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\godotsharp\\4.6.0\\godotsharp.4.6.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\godotsharpeditor\\4.6.0\\godotsharpeditor.4.6.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.26\\microsoft.netcore.app.ref.8.0.26.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.26\\microsoft.windowsdesktop.app.ref.8.0.26.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.26\\microsoft.aspnetcore.app.ref.8.0.26.nupkg.sha512"
+    "C:\\Users\\braga\\.nuget\\packages\\godot.sourcegenerators\\4.6.0\\godot.sourcegenerators.4.6.0.nupkg.sha512",
+    "C:\\Users\\braga\\.nuget\\packages\\godotsharp\\4.6.0\\godotsharp.4.6.0.nupkg.sha512",
+    "C:\\Users\\braga\\.nuget\\packages\\godotsharpeditor\\4.6.0\\godotsharpeditor.4.6.0.nupkg.sha512",
+    "C:\\Users\\braga\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.25\\microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\braga\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.25\\microsoft.windowsdesktop.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\braga\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.25\\microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512"
   ],
   "logs": []
 }

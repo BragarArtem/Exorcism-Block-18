@@ -6,7 +6,7 @@ public enum UIPanel {None, Settings, Encyclopedia, Difficulty}
 public partial class MainMenuController : Control
 {
     private TextureRect _settingsPanel;
-    private TextureRect _encyclopediaPanel;
+    private Control _encyclopediaPanel;
     private TextureRect _difficultyPanel;
     public override void _Ready()
     {
@@ -18,7 +18,7 @@ public partial class MainMenuController : Control
         SetupButton(GetNode<Button>("MainMenuButtons/ExitButton"), OnExitPressed);
         GetNode<CheckButton>("SettingsPanel/SettingsVBox/FullscreenCheckButton").Toggled += OnFullscreenTogled;
         _settingsPanel = GetNode<TextureRect>("SettingsPanel"); 
-        _encyclopediaPanel = GetNode<TextureRect>("EncyclopediaPanel");
+        _encyclopediaPanel = GetNode<Control>("EncyclopediaPanel");
         _difficultyPanel = GetNode<TextureRect>("DifficultyPanel");
     }
     private void SetupButton(Button button, System.Action action)

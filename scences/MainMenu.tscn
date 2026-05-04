@@ -2,14 +2,19 @@
 
 [ext_resource type="Script" uid="uid://0qtpbde0uuqr" path="res://scripts/UI/MainMenuController.cs" id="1_m1m6g"]
 [ext_resource type="Texture2D" uid="uid://bubsc0the6gak" path="res://sprites/scenes/MainMenuBackgroundUpscaled.png" id="2_huy1x"]
-[ext_resource type="Texture2D" uid="uid://duibka45kbp8" path="res://sprites/Icons/cog.svg" id="3_00gqc"]
-[ext_resource type="Texture2D" uid="uid://hfbe62l1oq20" path="res://sprites/Icons/scroll-unfurled.svg" id="4_fu78s"]
+[ext_resource type="Texture2D" uid="uid://chjvb54yj2lh1" path="res://sprites/scenes/DifficultyPanel/DifficultyBackGround.png" id="3_00gqc"]
+[ext_resource type="FontFile" uid="uid://dp8t7cx06kr7m" path="res://fonts/Gothica-Bold.ttf" id="3_hht6v"]
 [ext_resource type="Texture2D" uid="uid://c1pwupwt7cfdh" path="res://sprites/scenes/SettingsPanel.png" id="4_y84ry"]
 [ext_resource type="Texture2D" uid="uid://08lw4abepqyh" path="res://sprites/scenes/EncyclopediaBG.png" id="5_00gqc"]
-[ext_resource type="Texture2D" uid="uid://bh4e1aqy7214y" path="res://sprites/Icons/knapsack.svg" id="5_y84ry"]
+[ext_resource type="Script" uid="uid://c32fkobf1ku5a" path="res://scripts/UI/Difficulty/DifficultyController.cs" id="5_hht6v"]
+[ext_resource type="Texture2D" uid="uid://dg105jnkeuifl" path="res://sprites/scenes/DifficultyPanel/HollowDifficultyButton.png" id="6_knedo"]
+[ext_resource type="FontFile" uid="uid://41q7r0lbrokc" path="res://fonts/Gothica-Book.ttf" id="7_fituo"]
+[ext_resource type="Texture2D" uid="uid://dplahangrhxp2" path="res://sprites/scenes/DifficultyPanel/CursedDifficultyButton.png" id="8_brb72"]
 [ext_resource type="Script" uid="uid://c56pfw35nhstc" path="res://scripts/UI/Encyclopedia/EncyclopediaController.cs" id="8_y84ry"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00gqc"]
+[ext_resource type="Texture2D" uid="uid://bsukl16hkvooh" path="res://sprites/scenes/DifficultyPanel/AbyssalDifficultyButton.png" id="9_i0hn0"]
+[ext_resource type="Texture2D" uid="uid://dyoa746rt1qwc" path="res://sprites/scenes/DifficultyPanel/EldritchDifficultyButton.png" id="10_hgiiw"]
+[ext_resource type="Texture2D" uid="uid://dmj8xbn22vs1q" path="res://sprites/scenes/DifficultyPanel/ForsakenDifficultyButtons.png" id="11_qt1hu"]
+[ext_resource type="Texture2D" uid="uid://cp7q4o35qc5mh" path="res://sprites/scenes/DifficultyPanel/ConfirmDifficultyButton.png" id="12_gk402"]
 
 [node name="MainMenu" type="Control" unique_id=2011533203]
 layout_mode = 3
@@ -27,98 +32,217 @@ offset_bottom = 648.0
 texture = ExtResource("2_huy1x")
 expand_mode = 1
 
-[node name="SettingsButton" type="Button" parent="." unique_id=1065932880 groups=["menu_buttons"]]
+[node name="MainMenuButtons" type="VBoxContainer" parent="." unique_id=810062256]
 layout_mode = 0
-offset_left = 1092.0
-offset_top = 20.0
-offset_right = 1132.0
-offset_bottom = 60.0
-icon = ExtResource("3_00gqc")
+offset_left = 50.0
+offset_top = 400.0
+offset_right = 159.0
+offset_bottom = 606.0
+
+[node name="PlayButton" type="Button" parent="MainMenuButtons" unique_id=1818754505 groups=["menu_buttons"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hht6v")
+text = "PLAY"
+
+[node name="DifficultyButton" type="Button" parent="MainMenuButtons" unique_id=274875836 groups=["menu_buttons"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hht6v")
+text = "Difficulty"
+
+[node name="InventoryButton" type="Button" parent="MainMenuButtons" unique_id=138656600 groups=["menu_buttons"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hht6v")
+text = "Inventory"
+expand_icon = true
+
+[node name="EncyclopediaButton" type="Button" parent="MainMenuButtons" unique_id=283290093 groups=["menu_buttons"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hht6v")
+text = "Encyclopedia"
+expand_icon = true
+
+[node name="SettingsButton" type="Button" parent="MainMenuButtons" unique_id=1065932880 groups=["menu_buttons"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hht6v")
+text = "Settings"
 icon_alignment = 1
 expand_icon = true
 
-[node name="SettingsPanel" type="Panel" parent="SettingsButton" unique_id=1667776458]
-visible = false
-layout_mode = 0
-offset_left = -170.0
-offset_top = 45.0
-offset_right = 30.0
-offset_bottom = 365.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_00gqc")
-
-[node name="SettingsBackground" type="TextureRect" parent="SettingsButton/SettingsPanel" unique_id=415688227]
-layout_mode = 0
-offset_left = -45.0
-offset_top = -20.0
-offset_right = 255.0
-offset_bottom = 330.0
-texture = ExtResource("4_y84ry")
-expand_mode = 1
-
-[node name="SettingsContainer" type="VBoxContainer" parent="SettingsButton/SettingsPanel" unique_id=1747645799]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 40.0
-offset_right = 180.0
-offset_bottom = 290.0
-
-[node name="MusicVolumeLabel" type="Label" parent="SettingsButton/SettingsPanel/SettingsContainer" unique_id=2113505905]
+[node name="ExitButton" type="Button" parent="MainMenuButtons" unique_id=263593392]
 layout_mode = 2
-text = "Music Volume"
-
-[node name="MusicVolumeSlider" type="HSlider" parent="SettingsButton/SettingsPanel/SettingsContainer" unique_id=343575193]
-layout_mode = 2
-value = 100.0
-
-[node name="SFXVolumeLabel" type="Label" parent="SettingsButton/SettingsPanel/SettingsContainer" unique_id=1617304810]
-layout_mode = 2
-text = "SFX Volume"
-
-[node name="SFXVolumeSlider" type="HSlider" parent="SettingsButton/SettingsPanel/SettingsContainer" unique_id=1347420094]
-layout_mode = 2
-value = 100.0
-
-[node name="FullscreenCheckButton" type="CheckButton" parent="SettingsButton/SettingsPanel/SettingsContainer" unique_id=1665600740]
-layout_mode = 2
-button_pressed = true
-text = "Fullscreen"
-
-[node name="ExitButton" type="Button" parent="SettingsButton/SettingsPanel/SettingsContainer" unique_id=263593392]
-layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hht6v")
+theme_override_font_sizes/font_size = 16
 text = "Exit"
 
-[node name="EncyclopediaButton" type="Button" parent="." unique_id=283290093 groups=["menu_buttons"]]
+[node name="DifficultyPanel" type="TextureRect" parent="." unique_id=1970097302]
+visible = false
 layout_mode = 0
-offset_left = 20.0
-offset_top = 350.0
-offset_right = 60.0
-offset_bottom = 390.0
-icon = ExtResource("4_fu78s")
-expand_icon = true
+offset_left = 291.0
+offset_top = 260.0
+offset_right = 921.0
+offset_bottom = 680.0
+texture = ExtResource("3_00gqc")
+expand_mode = 2
+script = ExtResource("5_hht6v")
 
-[node name="InventoryButton" type="Button" parent="." unique_id=138656600 groups=["menu_buttons"]]
+[node name="HollowDifficultyButton" type="TextureButton" parent="DifficultyPanel" unique_id=939739072]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 300.0
-offset_right = 60.0
-offset_bottom = 340.0
-icon = ExtResource("5_y84ry")
-expand_icon = true
+offset_left = 85.0
+offset_top = 81.0
+offset_right = 435.0
+offset_bottom = 130.0
+texture_normal = ExtResource("6_knedo")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="CenterContainer" type="VBoxContainer" parent="." unique_id=1632712303]
+[node name="Label" type="Label" parent="DifficultyPanel/HollowDifficultyButton" unique_id=343351825]
 layout_mode = 0
-offset_left = 932.0
-offset_top = 500.0
-offset_right = 1082.0
-offset_bottom = 570.0
+offset_top = 1.0
+offset_right = 350.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.9607843, 0.9019608, 0.78431374, 1)
+theme_override_colors/font_outline_color = Color(0.101960786, 0.039215688, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("7_fituo")
+theme_override_font_sizes/font_size = 20
+text = "H O L L O W"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+autowrap_trim_flags = 0
 
-[node name="PlayButton" type="Button" parent="CenterContainer" unique_id=1818754505 groups=["menu_buttons"]]
-layout_mode = 2
-text = "Embrace the Dark"
+[node name="CursedDifficultyButton" type="TextureButton" parent="DifficultyPanel" unique_id=907587013]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 130.0
+offset_right = 435.0
+offset_bottom = 179.0
+texture_normal = ExtResource("8_brb72")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="DifficultyButton" type="Button" parent="CenterContainer" unique_id=274875836 groups=["menu_buttons"]]
-layout_mode = 2
-text = "Fate’s Cruelty"
+[node name="Label" type="Label" parent="DifficultyPanel/CursedDifficultyButton" unique_id=1658804031]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 350.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.9607843, 0.9019608, 0.78431374, 1)
+theme_override_colors/font_outline_color = Color(0.101960786, 0.039215688, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("7_fituo")
+theme_override_font_sizes/font_size = 20
+text = "C U R S E D"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+autowrap_trim_flags = 0
+
+[node name="AbyssalDifficultyButton" type="TextureButton" parent="DifficultyPanel" unique_id=1222431563]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 180.0
+offset_right = 435.0
+offset_bottom = 229.0
+texture_normal = ExtResource("9_i0hn0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="DifficultyPanel/AbyssalDifficultyButton" unique_id=882464469]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 350.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.9607843, 0.9019608, 0.78431374, 1)
+theme_override_colors/font_outline_color = Color(0.101960786, 0.039215688, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("7_fituo")
+theme_override_font_sizes/font_size = 20
+text = "A B Y S S A L"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+autowrap_trim_flags = 0
+
+[node name="EldritchDifficultyButton" type="TextureButton" parent="DifficultyPanel" unique_id=1979736896]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 231.0
+offset_right = 435.0
+offset_bottom = 280.0
+texture_normal = ExtResource("10_hgiiw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="DifficultyPanel/EldritchDifficultyButton" unique_id=2045618387]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 350.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.9607843, 0.9019608, 0.78431374, 1)
+theme_override_colors/font_outline_color = Color(0.101960786, 0.039215688, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("7_fituo")
+theme_override_font_sizes/font_size = 20
+text = "E L D R I T C H"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+autowrap_trim_flags = 0
+
+[node name="ForsakenDifficultyButton" type="TextureButton" parent="DifficultyPanel" unique_id=1886396326]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 282.0
+offset_right = 435.0
+offset_bottom = 331.0
+texture_normal = ExtResource("11_qt1hu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="DifficultyPanel/ForsakenDifficultyButton" unique_id=1228457329]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 350.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.9607843, 0.9019608, 0.78431374, 1)
+theme_override_colors/font_outline_color = Color(0.101960786, 0.039215688, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("7_fituo")
+theme_override_font_sizes/font_size = 20
+text = "F O R S A K E N"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+autowrap_trim_flags = 0
+
+[node name="ConfirmDifficultyButton" type="TextureButton" parent="DifficultyPanel" unique_id=1628471863]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 78.0
+offset_right = 536.0
+offset_bottom = 332.0
+texture_normal = ExtResource("12_gk402")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="DifficultyPanel/ConfirmDifficultyButton" unique_id=1712567508]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 94.0
+offset_bottom = 255.0
+theme_override_colors/font_color = Color(0.9607843, 0.9019608, 0.78431374, 1)
+theme_override_colors/font_outline_color = Color(0.101960786, 0.039215688, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("7_fituo")
+theme_override_font_sizes/font_size = 30
+text = "S
+A
+V
+E"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+autowrap_trim_flags = 0
 
 [node name="EncyclopediaPanel" type="TextureRect" parent="." unique_id=677721523]
 visible = false
@@ -147,3 +271,40 @@ offset_bottom = 527.0
 [node name="EnemyList" type="GridContainer" parent="EncyclopediaPanel/EncyclopediaController/ScrollContainer" unique_id=805916532]
 layout_mode = 2
 columns = 2
+
+[node name="SettingsPanel" type="TextureRect" parent="." unique_id=415688227]
+visible = false
+layout_mode = 0
+offset_left = 852.0
+offset_right = 1152.0
+offset_bottom = 350.0
+texture = ExtResource("4_y84ry")
+expand_mode = 1
+
+[node name="SettingsVBox" type="VBoxContainer" parent="SettingsPanel" unique_id=1747645799]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 60.0
+offset_right = 225.0
+offset_bottom = 310.0
+
+[node name="MusicVolumeLabel" type="Label" parent="SettingsPanel/SettingsVBox" unique_id=2113505905]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="SettingsPanel/SettingsVBox" unique_id=343575193]
+layout_mode = 2
+value = 100.0
+
+[node name="SFXVolumeLabel" type="Label" parent="SettingsPanel/SettingsVBox" unique_id=1617304810]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="SettingsPanel/SettingsVBox" unique_id=1347420094]
+layout_mode = 2
+value = 100.0
+
+[node name="FullscreenCheckButton" type="CheckButton" parent="SettingsPanel/SettingsVBox" unique_id=1665600740]
+layout_mode = 2
+button_pressed = true
+text = "Fullscreen"

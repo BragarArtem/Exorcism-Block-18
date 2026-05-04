@@ -43,7 +43,6 @@ region_rect = Rect2(0, 0, 40960, 40960)
 [node name="Enemy_goblin" parent="." unique_id=140441111 instance=ExtResource("3_8edsk")]
 position = Vector2(615, 810)
 
-<<<<<<< HEAD
 [node name="Spawner" type="Node2D" parent="." unique_id=2097309945]
 script = ExtResource("5_41s58")
 
@@ -51,7 +50,6 @@ script = ExtResource("5_41s58")
 autostart = true
 
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="OnEnemyTimerTimeout"]
-=======
 [node name="Enemy_goblin2" parent="." unique_id=1725297831 instance=ExtResource("3_8edsk")]
 position = Vector2(610, 1066)
->>>>>>> 1e4b807d8a1f82ed285e10cc71d1c0176d890db3
+

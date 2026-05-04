@@ -30,8 +30,7 @@ public partial class Goblin : CharacterBody2D
 		_animatedSprite.AnimationFinished += OnAnimationFinished;
 		_animatedSprite.FrameChanged += OnFrameChanged;
 		
-		
-		_currentHP = MaxHP;
+		_currentHP = MaxHP * DifficultySettings.HPMultiplier;
 		if (_hurtBox != null)
 		{
 			_hurtBox.Connect("Hurt", Callable.From<float>(TakeDamage));
@@ -108,7 +107,7 @@ public partial class Goblin : CharacterBody2D
 		{
 			if (_player.HasMethod("TakeDamage"))
 			{
-				_player.Call("TakeDamage", Damage);   
+				_player.Call("TakeDamage", Damage * DifficultySettings.DamageMultiplier);   
 			}
 		}
 	}
