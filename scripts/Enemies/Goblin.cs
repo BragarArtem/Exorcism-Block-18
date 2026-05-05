@@ -6,7 +6,7 @@ public partial class Goblin : CharacterBody2D
 	[Signal] public delegate void DiedEventHandler(float xpValue);
 
 	[Export] public float Speed = 80.0f;
-	[Export] public float StopDistance = 50.0f;
+	[Export] public float StopDistance = 20.0f;
 	[Export] public float AttackCooldown = 1.5f;
 	[Export] public float Damage = 10.0f;
 
@@ -16,7 +16,7 @@ public partial class Goblin : CharacterBody2D
 	[Export] private Area2D _hurtBox;
 
 	private AnimatedSprite2D _animatedSprite; 
-	private Node2D _player;
+	private Player _player;
 	
 	private bool _isAttacking = false;
 	private float _attackTimer = 0.0f;
@@ -24,13 +24,14 @@ public partial class Goblin : CharacterBody2D
 
 	public override void _Ready()
 	{
-		_player = GetTree().GetFirstNodeInGroup("player") as Node2D;
+		_player = GetTree().GetFirstNodeInGroup("player") as Player;
 		_animatedSprite = GetNode<AnimatedSprite2D>("Goblin");
 
 		_animatedSprite.AnimationFinished += OnAnimationFinished;
 		_animatedSprite.FrameChanged += OnFrameChanged;
-		
-		_currentHP = MaxHP * DifficultySettings.HPMultiplier;
+
+		MaxHP = MaxHP * DifficultySettings.HPMultiplier;
+		_currentHP = MaxHP;
 		if (_hurtBox != null)
 		{
 			_hurtBox.Connect("Hurt", Callable.From<float>(TakeDamage));
@@ -66,7 +67,7 @@ public partial class Goblin : CharacterBody2D
 
 		if (distanceToPlayer > StopDistance)
 		{
-			Velocity = direction * Speed;
+			Velocity = direction * Speed * DifficultySettings.SpeedMultiplier;
 			_animatedSprite.Play("walk");
 			_animatedSprite.FlipH = direction.X < 0; 
 		}
@@ -105,10 +106,7 @@ public partial class Goblin : CharacterBody2D
 		float distance = GlobalPosition.DistanceTo(_player.GlobalPosition);
 		if (distance <= StopDistance + 15.0f) 
 		{
-			if (_player.HasMethod("TakeDamage"))
-			{
-				_player.Call("TakeDamage", Damage * DifficultySettings.DamageMultiplier);   
-			}
+			_player.TakeDamage(Damage * DifficultySettings.DamageMultiplier);
 		}
 	}
 

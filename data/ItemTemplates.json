@@ -1,0 +1,17 @@
+[
+    {
+    "id": "short_sword_t1",
+    "name": "Rusty short sword",
+    "category": "short_sword",
+    "tier": 1,
+    "price_base": 5,
+    "stats":{
+        "damage": {"min": 1.0, "max": 5.0},
+        "armor_penetration": {"min": 0.0, "max": 0.1},
+        "range": {"min": 50.0, "max": 80.0},
+        "APS": {"min": 2.0, "max": 3.0},
+        "player_speed": {"min": -0.05, "max": 0.0}
+    },
+    "icon_path": "would be added soon"
+    }
+]
