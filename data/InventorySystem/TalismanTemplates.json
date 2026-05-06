@@ -1,0 +1,17 @@
+[
+    {
+        "id": "blood-gilded-coin",
+        "name": "Blood-Gilded Coin",
+        "price_base": 1000,
+        "icon_path": "would be added soon",
+        "effect":
+        {
+            "type": "gold_multiplier",
+            "is_random": false,
+            "stats":
+            {
+                "gold_multiplier": {"min": 0.15, "max": 0.15}
+            }
+        }
+    }
+]

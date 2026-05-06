@@ -1,7 +1,5 @@
 using Godot;
-using System;
 using System.Collections.Generic;
-using System.Numerics;
 
 public enum AttackType {Single, Plural}
 public partial class Player : CharacterBody2D

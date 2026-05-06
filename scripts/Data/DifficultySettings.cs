@@ -1,5 +1,3 @@
-using System;
-using Godot;
 public static class DifficultySettings
 {
     public static float HPMultiplier;

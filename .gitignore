@@ -1,3 +1,25 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# C# / .NET
+*.csproj.old
+*.csproj.old.*
+bin/
+obj/
+.vs/
+*.user
+
+# Build artifacts
+*.dll
+*.pdb
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Exports
+export/
+*.exe
+*.apk
+*.aab

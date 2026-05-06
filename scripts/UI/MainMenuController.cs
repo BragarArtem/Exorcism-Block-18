@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public enum UIPanel {None, Settings, Encyclopedia, Difficulty}
 
