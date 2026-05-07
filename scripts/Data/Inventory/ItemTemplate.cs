@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -19,6 +18,8 @@ public class ItemTemplate
 
     [JsonPropertyName("category")]
     public string Category {get; set;} = "";
+    [JsonPropertyName("slot")]
+    public string Slot {get; set; } = "";
 
     [JsonPropertyName("tier")]
     public int Tier {get; set;}

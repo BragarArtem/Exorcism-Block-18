@@ -84,5 +84,14 @@ public partial class ItemFactory : Node
             return null;
         }
     }
+    public ItemTemplate GetItemTemplate(string templateID)
+    {
+        return _itemTemplates.FirstOrDefault(t=> t.ID == templateID);
+
+    }
+    public TalismanTemplate GetTalismanTemplate(string templateID)
+    {
+        return _talismanTemplates.FirstOrDefault(t=> t.ID == templateID);
+    }
 }
 

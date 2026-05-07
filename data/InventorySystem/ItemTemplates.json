@@ -3,6 +3,7 @@
     "id": "short_sword_t1",
     "name": "Rusty short sword",
     "category": "short_sword",
+    "slot": "Weapon",
     "tier": 1,
     "price_base": 5,
     "stats":{

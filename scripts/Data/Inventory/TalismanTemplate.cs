@@ -17,6 +17,8 @@ public class TalismanTemplate
 
     [JsonPropertyName("name")]
     public string Name {get; set;} = "";
+    [JsonPropertyName("slot")]
+    public string Slot {get; set; } = "";
 
     [JsonPropertyName("price_base")]
     public decimal PriceBase {get; set;}
