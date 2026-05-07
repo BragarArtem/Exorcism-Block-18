@@ -46,11 +46,35 @@ public partial class ItemFactory : Node
             foreach(var stat in template.Stats)
             {
                 float value = (float)(_rng.NextDouble() * (stat.Value.Max - stat.Value.Min) + stat.Value.Min);
-                instance.ItemStats[stat.Key] = value;
+                instance.Stats[stat.Key] = value;
                 statSum += value;
             }
             instance.TemplateID = TemplateID;
             instance.Price = template.PriceBase * ((decimal)statSum / template.Stats.Count);
+            return instance;
+            
+        }
+        else
+        {
+            GD.PrintErr($"Template{TemplateID} not found");
+            return null;
+        }
+    }
+    public TalismanInstance CreateTalisman(string TemplateID)
+    {
+        var template = _talismanTemplates.FirstOrDefault(t => t.ID == TemplateID);
+        if(template != null)
+        {
+            var instance = new TalismanInstance();
+            float statSum = 0f;
+            foreach(var stat in template.Effect.Stats)
+            {
+                float value = (float)(_rng.NextDouble() * (stat.Value.Max - stat.Value.Min) + stat.Value.Min);
+                instance.Stats[stat.Key] = value;
+                statSum += value;
+            }
+            instance.TemplateID = TemplateID;
+            instance.Price = template.PriceBase * ((decimal)statSum / template.Effect.Stats.Count);
             return instance;
             
         }
