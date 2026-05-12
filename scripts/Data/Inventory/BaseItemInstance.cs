@@ -19,5 +19,5 @@ public class BaseItemInstance
         }
     }
 }
-public class ItemInstance : BaseItemInstance{};
-public class TalismanInstance : BaseItemInstance{};
+public class ItemInstance : BaseItemInstance{}
+public class TalismanInstance : BaseItemInstance{}

@@ -10,10 +10,10 @@ public partial class Player : CharacterBody2D
 	//Attack parameters
 	[Export] public float APS = 2.0f;
 	[Export] public float Damage = 5.0f;
-	[Export] public AttackType CurrentAttackType = AttackType.Plural;
+	[Export] public AttackType CurrentAttackType = AttackType.Single;
 	[Export] public float PassiveAPS = 1.0f;
 	[Export] public float PassiveDamage = 3.0f;
-	[Export] public bool PassiveIsEnabled = false;
+	[Export] public bool PassiveIsEnabled = true;
 	//Private fields
 	private AnimatedSprite2D _hero;
 	private AttackZone _attackZone;

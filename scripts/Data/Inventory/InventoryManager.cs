@@ -53,5 +53,6 @@ public partial class InventoryManager : Node
         decimal _itemPrice = item.Price;
         DeleteItem(item);
         _saveManager.CurrentSaveData.Gold += _itemPrice;
+        return _itemPrice;
     } 
 }

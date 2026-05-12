@@ -1,9 +1,246 @@
-[gd_scene format=3 uid="uid://bpxy21rvvfd8f"]
+[gd_scene format=3 uid="uid://d3i7tntbru4jo"]
 
-[node name="Inventory" type="Control" unique_id=2141395729]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Texture2D" uid="uid://c6qodvy62utx3" path="res://sprites/scenes/Inventory/CharacterInventory.png" id="1_imu8d"]
+[ext_resource type="Texture2D" uid="uid://bl71jnslyw0mp" path="res://sprites/scenes/Inventory/ItemInteractionBackground.png" id="2_cs42f"]
+[ext_resource type="Texture2D" uid="uid://wq4j1j6jsh7l" path="res://sprites/scenes/Inventory/ToMerchantButton.png" id="2_otkb8"]
+[ext_resource type="Texture2D" uid="uid://dupvds2cjfhf7" path="res://sprites/scenes/Inventory/MerchantDiologue.png" id="3_ipr67"]
+[ext_resource type="Texture2D" uid="uid://6332mr356ky6" path="res://sprites/scenes/Inventory/ItemInteractionButton.png" id="3_v1rfc"]
+
+[node name="Inventory" type="TextureRect" unique_id=885699682]
+offset_right = 1152.0
+offset_bottom = 648.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EquipmentPanel" type="TextureRect" parent="." unique_id=907759848]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 400.0
+
+[node name="CharacterSprite" type="TextureRect" parent="EquipmentPanel" unique_id=2146348004]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 601.0
+offset_bottom = 300.0
+texture = ExtResource("1_imu8d")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HelmetSlot" type="TextureButton" parent="EquipmentPanel" unique_id=877357351]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 110.0
+offset_bottom = 110.0
+
+[node name="ArmorSlot" type="TextureButton" parent="EquipmentPanel" unique_id=1992056841]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 130.0
+offset_right = 110.0
+offset_bottom = 190.0
+
+[node name="GlovesSlot" type="TextureButton" parent="EquipmentPanel" unique_id=591670907]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 210.0
+offset_right = 110.0
+offset_bottom = 270.0
+
+[node name="BootsSlot" type="TextureButton" parent="EquipmentPanel" unique_id=2136700154]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 290.0
+offset_right = 110.0
+offset_bottom = 350.0
+
+[node name="WeaponSlot" type="TextureButton" parent="EquipmentPanel" unique_id=1838711743]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 50.0
+offset_right = 550.0
+offset_bottom = 110.0
+
+[node name="TalismanSlot" type="TextureButton" parent="EquipmentPanel" unique_id=1651323626]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 130.0
+offset_right = 550.0
+offset_bottom = 190.0
+
+[node name="NecklaceSlot" type="TextureButton" parent="EquipmentPanel" unique_id=1435615254]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 210.0
+offset_right = 550.0
+offset_bottom = 270.0
+
+[node name="RingSlot1" type="TextureButton" parent="EquipmentPanel" unique_id=1985735457]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 290.0
+offset_right = 550.0
+offset_bottom = 350.0
+
+[node name="RingSlot2" type="TextureButton" parent="EquipmentPanel" unique_id=1045167792]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 290.0
+offset_right = 470.0
+offset_bottom = 350.0
+
+[node name="StatsLabel" type="Panel" parent="EquipmentPanel" unique_id=1435198470]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 290.0
+offset_right = 390.0
+offset_bottom = 350.0
+
+[node name="HPLablel" type="Label" parent="EquipmentPanel/StatsLabel" unique_id=461246116]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 30.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpeedLabel" type="Label" parent="EquipmentPanel/StatsLabel" unique_id=646621431]
+layout_mode = 0
+offset_top = 30.0
+offset_right = 130.0
+offset_bottom = 60.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DamageLabel" type="Label" parent="EquipmentPanel/StatsLabel" unique_id=1146249542]
+layout_mode = 0
+offset_left = 130.0
+offset_right = 260.0
+offset_bottom = 30.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="APSLabel" type="Label" parent="EquipmentPanel/StatsLabel" unique_id=428717864]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 30.0
+offset_right = 260.0
+offset_bottom = 60.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InventoryGrid" type="TextureRect" parent="." unique_id=1211151608]
+layout_mode = 0
+offset_top = 400.0
+offset_right = 500.0
+offset_bottom = 648.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryGrid" unique_id=1012941085]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 450.0
+offset_bottom = 224.0
+
+[node name="GridContainer" type="GridContainer" parent="InventoryGrid/ScrollContainer" unique_id=1936857495]
+layout_mode = 2
+
+[node name="SortPanel" type="TextureRect" parent="InventoryGrid" unique_id=148472302]
+layout_mode = 0
+offset_left = 500.0
+offset_right = 560.0
+offset_bottom = 150.0
+
+[node name="SortByType" type="TextureButton" parent="InventoryGrid/SortPanel" unique_id=1425542786]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="SortByValue" type="TextureButton" parent="InventoryGrid/SortPanel" unique_id=2044313098]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 60.0
+offset_right = 50.0
+offset_bottom = 100.0
+
+[node name="SortByRarity" type="TextureButton" parent="InventoryGrid/SortPanel" unique_id=1992885287]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 110.0
+offset_right = 50.0
+offset_bottom = 150.0
+
+[node name="ItemActionPanel" type="TextureRect" parent="InventoryGrid" unique_id=654569759]
+layout_mode = 0
+offset_left = 500.0
+offset_top = -31.0
+offset_right = 620.0
+offset_bottom = 166.0
+texture = ExtResource("2_cs42f")
+expand_mode = 1
+
+[node name="EquipButton" type="TextureButton" parent="InventoryGrid/ItemActionPanel" unique_id=1165927989]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 37.0
+offset_right = 105.0
+offset_bottom = 74.0
+texture_normal = ExtResource("3_v1rfc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="InventoryGrid/ItemActionPanel/EquipButton" unique_id=694068055]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 77.0
+offset_bottom = 30.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SellButton" type="TextureButton" parent="InventoryGrid/ItemActionPanel" unique_id=842675008]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 82.0
+offset_right = 105.0
+offset_bottom = 119.0
+texture_normal = ExtResource("3_v1rfc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CloseButton" type="TextureButton" parent="InventoryGrid/ItemActionPanel" unique_id=688708820]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 125.0
+offset_right = 105.0
+offset_bottom = 162.0
+texture_normal = ExtResource("3_v1rfc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ToMerchantScene" type="Node" parent="." unique_id=352051176]
+
+[node name="ToMerchantButton" type="TextureButton" parent="ToMerchantScene" unique_id=1659211079]
+offset_left = 696.0
+offset_top = 58.0
+offset_right = 1083.0
+offset_bottom = 392.0
+texture_normal = ExtResource("2_otkb8")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MerchantDialogue" type="TextureRect" parent="ToMerchantScene" unique_id=801906450]
+offset_left = 663.0
+offset_top = 340.0
+offset_right = 1126.0
+offset_bottom = 687.0
+texture = ExtResource("3_ipr67")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="InfoLabel" type="Label" parent="ToMerchantScene/MerchantDialogue" unique_id=1448391794]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 78.0
+offset_right = 402.0
+offset_bottom = 235.0

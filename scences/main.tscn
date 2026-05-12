@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://eiswnvx8f7pa" path="res://sprites/scenes/backGround.png" id="3_3if0j"]
 [ext_resource type="PackedScene" uid="uid://ddeth0fpx7lwm" path="res://scences/enemy.tscn" id="3_8edsk"]
 [ext_resource type="PackedScene" uid="uid://5pp35ffkfpgp" path="res://scences/battleUI.tscn" id="4_3if0j"]
-[ext_resource type="Script" uid="uid://du4ltbl2lupw2" path="res://scripts/Enemies/SpawnLogic.cs" id="5_41s58"]
+[ext_resource type="Script" path="res://scripts/Enemies/SpawnLogic.cs" id="5_41s58"]
 
 [sub_resource type="Curve2D" id="Curve2D_3if0j"]
 bake_interval = 0.01
@@ -49,7 +49,7 @@ script = ExtResource("5_41s58")
 [node name="Timer" type="Timer" parent="Spawner" unique_id=1821105229]
 autostart = true
 
-[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="OnEnemyTimerTimeout"]
 [node name="Enemy_goblin2" parent="." unique_id=1725297831 instance=ExtResource("3_8edsk")]
 position = Vector2(610, 1066)
 
+[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="OnEnemyTimerTimeout"]

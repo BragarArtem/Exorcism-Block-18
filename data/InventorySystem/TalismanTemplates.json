@@ -2,7 +2,7 @@
     {
         "id": "blood-gilded-coin",
         "name": "Blood-Gilded Coin",
-        "slot": "Talisman"
+        "slot": "Talisman",
         "price_base": 1000,
         "icon_path": "would be added soon",
         "effect":
