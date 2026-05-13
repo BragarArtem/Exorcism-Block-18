@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bibu00mv6rdsh"]
 
 [ext_resource type="Script" uid="uid://0qtpbde0uuqr" path="res://scripts/UI/MainMenuController.cs" id="1_m1m6g"]
-[ext_resource type="Texture2D" uid="uid://bubsc0the6gak" path="res://sprites/scenes/MainMenuBackgroundUpscaled.png" id="2_huy1x"]
+[ext_resource type="Texture2D" uid="uid://cy86sbdnfqlgg" path="res://sprites/scenes/MainMenuBackground.png" id="2_hht6v"]
 [ext_resource type="Texture2D" uid="uid://chjvb54yj2lh1" path="res://sprites/scenes/DifficultyPanel/DifficultyBackGround.png" id="3_00gqc"]
 [ext_resource type="FontFile" uid="uid://dp8t7cx06kr7m" path="res://fonts/Gothica-Bold.ttf" id="3_hht6v"]
 [ext_resource type="Texture2D" uid="uid://c1pwupwt7cfdh" path="res://sprites/scenes/SettingsPanel.png" id="4_y84ry"]
@@ -29,7 +29,7 @@ script = ExtResource("1_m1m6g")
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("2_huy1x")
+texture = ExtResource("2_hht6v")
 expand_mode = 1
 
 [node name="MainMenuButtons" type="VBoxContainer" parent="." unique_id=810062256]

@@ -1,12 +1,15 @@
-[gd_scene format=3 uid="uid://d3i7tntbru4jo"]
+[gd_scene format=3 uid="uid://g1wb3ddsox3l"]
 
 [ext_resource type="Texture2D" uid="uid://c6qodvy62utx3" path="res://sprites/scenes/Inventory/CharacterInventory.png" id="1_imu8d"]
+[ext_resource type="Texture2D" uid="uid://3j0ur7101tgt" path="res://sprites/scenes/Inventory/InventoryItemGridBackground.png" id="2_3052d"]
 [ext_resource type="Texture2D" uid="uid://bl71jnslyw0mp" path="res://sprites/scenes/Inventory/ItemInteractionBackground.png" id="2_cs42f"]
 [ext_resource type="Texture2D" uid="uid://wq4j1j6jsh7l" path="res://sprites/scenes/Inventory/ToMerchantButton.png" id="2_otkb8"]
 [ext_resource type="Texture2D" uid="uid://dupvds2cjfhf7" path="res://sprites/scenes/Inventory/MerchantDiologue.png" id="3_ipr67"]
 [ext_resource type="Texture2D" uid="uid://6332mr356ky6" path="res://sprites/scenes/Inventory/ItemInteractionButton.png" id="3_v1rfc"]
+[ext_resource type="FontFile" uid="uid://41q7r0lbrokc" path="res://fonts/Gothica-Book.ttf" id="5_7xmpj"]
+[ext_resource type="FontFile" uid="uid://dp8t7cx06kr7m" path="res://fonts/Gothica-Bold.ttf" id="6_16iu3"]
 
-[node name="Inventory" type="TextureRect" unique_id=885699682]
+[node name="Inventory2" type="TextureRect" unique_id=885699682]
 offset_right = 1152.0
 offset_bottom = 648.0
 expand_mode = 1
@@ -131,92 +134,196 @@ vertical_alignment = 1
 [node name="InventoryGrid" type="TextureRect" parent="." unique_id=1211151608]
 layout_mode = 0
 offset_top = 400.0
-offset_right = 500.0
-offset_bottom = 648.0
+offset_right = 534.0
+offset_bottom = 733.0
+texture = ExtResource("2_3052d")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="ScrollContainer" type="ScrollContainer" parent="InventoryGrid" unique_id=1012941085]
 layout_mode = 0
-offset_top = 24.0
-offset_right = 450.0
-offset_bottom = 224.0
+offset_left = 72.0
+offset_top = 61.0
+offset_right = 459.0
+offset_bottom = 248.0
 
 [node name="GridContainer" type="GridContainer" parent="InventoryGrid/ScrollContainer" unique_id=1936857495]
 layout_mode = 2
 
-[node name="SortPanel" type="TextureRect" parent="InventoryGrid" unique_id=148472302]
-layout_mode = 0
-offset_left = 500.0
-offset_right = 560.0
-offset_bottom = 150.0
-
-[node name="SortByType" type="TextureButton" parent="InventoryGrid/SortPanel" unique_id=1425542786]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 50.0
-offset_bottom = 50.0
-
-[node name="SortByValue" type="TextureButton" parent="InventoryGrid/SortPanel" unique_id=2044313098]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 60.0
-offset_right = 50.0
-offset_bottom = 100.0
-
-[node name="SortByRarity" type="TextureButton" parent="InventoryGrid/SortPanel" unique_id=1992885287]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 110.0
-offset_right = 50.0
-offset_bottom = 150.0
-
 [node name="ItemActionPanel" type="TextureRect" parent="InventoryGrid" unique_id=654569759]
 layout_mode = 0
-offset_left = 500.0
-offset_top = -31.0
-offset_right = 620.0
-offset_bottom = 166.0
+offset_left = 491.0
+offset_right = 611.0
+offset_bottom = 220.0
 texture = ExtResource("2_cs42f")
 expand_mode = 1
 
 [node name="EquipButton" type="TextureButton" parent="InventoryGrid/ItemActionPanel" unique_id=1165927989]
 layout_mode = 0
 offset_left = 15.0
-offset_top = 37.0
+offset_top = 46.0
 offset_right = 105.0
-offset_bottom = 74.0
+offset_bottom = 83.0
 texture_normal = ExtResource("3_v1rfc")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="InventoryGrid/ItemActionPanel/EquipButton" unique_id=694068055]
+[node name="EquipLabel" type="Label" parent="InventoryGrid/ItemActionPanel/EquipButton" unique_id=694068055]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 7.0
 offset_right = 77.0
 offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("5_7xmpj")
+text = "Equip"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SellButton" type="TextureButton" parent="InventoryGrid/ItemActionPanel" unique_id=842675008]
 layout_mode = 0
 offset_left = 15.0
-offset_top = 82.0
+offset_top = 93.0
 offset_right = 105.0
-offset_bottom = 119.0
+offset_bottom = 130.0
 texture_normal = ExtResource("3_v1rfc")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="SellLabel" type="Label" parent="InventoryGrid/ItemActionPanel/SellButton" unique_id=243134000]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 77.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("5_7xmpj")
+text = "Sell"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CloseButton" type="TextureButton" parent="InventoryGrid/ItemActionPanel" unique_id=688708820]
 layout_mode = 0
 offset_left = 15.0
-offset_top = 125.0
+offset_top = 141.0
 offset_right = 105.0
-offset_bottom = 162.0
+offset_bottom = 178.0
 texture_normal = ExtResource("3_v1rfc")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="CloseLabel" type="Label" parent="InventoryGrid/ItemActionPanel/CloseButton" unique_id=224237308]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 77.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("5_7xmpj")
+text = "Close"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InventorySortPanel" type="TextureRect" parent="InventoryGrid" unique_id=327819392]
+layout_mode = 0
+offset_left = 491.0
+offset_right = 611.0
+offset_bottom = 220.0
+texture = ExtResource("2_cs42f")
+expand_mode = 1
+
+[node name="SortByTypeButton" type="TextureButton" parent="InventoryGrid/InventorySortPanel" unique_id=2032652319]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 69.0
+offset_right = 105.0
+offset_bottom = 106.0
+texture_normal = ExtResource("3_v1rfc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SortByTypeLabel" type="Label" parent="InventoryGrid/InventorySortPanel/SortByTypeButton" unique_id=54950725]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 77.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("5_7xmpj")
+text = "Type"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SortyByValueButton" type="TextureButton" parent="InventoryGrid/InventorySortPanel" unique_id=42341963]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 107.0
+offset_right = 105.0
+offset_bottom = 144.0
+texture_normal = ExtResource("3_v1rfc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SortByValueLabel" type="Label" parent="InventoryGrid/InventorySortPanel/SortyByValueButton" unique_id=652977236]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 77.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("5_7xmpj")
+text = "Value"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SortByStrenghtButton" type="TextureButton" parent="InventoryGrid/InventorySortPanel" unique_id=1580477876]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 148.0
+offset_right = 105.0
+offset_bottom = 185.0
+texture_normal = ExtResource("3_v1rfc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SortByStrenghtLabel" type="Label" parent="InventoryGrid/InventorySortPanel/SortByStrenghtButton" unique_id=2123355612]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 77.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("5_7xmpj")
+text = "Strenght"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SortByTypeLabel" type="Label" parent="InventoryGrid/InventorySortPanel" unique_id=819504607]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 34.0
+offset_right = 106.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("6_16iu3")
+theme_override_font_sizes/font_size = 20
+text = "Sort By:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InventoryHeadingButton" type="TextureButton" parent="InventoryGrid" unique_id=1723498064]
+layout_mode = 0
+offset_left = 194.5
+offset_right = 339.5
+offset_bottom = 61.0
+texture_normal = ExtResource("3_v1rfc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="InventoryHeadingLabel" type="Label" parent="InventoryGrid/InventoryHeadingButton" unique_id=1036412936]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 138.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("6_16iu3")
+theme_override_font_sizes/font_size = 25
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ToMerchantScene" type="Node" parent="." unique_id=352051176]
 

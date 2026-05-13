@@ -60,7 +60,7 @@ git clone https://github.com/bobrzlober/Exorcism-Block-18.git
 ## Authors
 
 - **Sk1y-1**
-- **bobr_zlober**
+- **BragarArtem**
 
 ---
 
