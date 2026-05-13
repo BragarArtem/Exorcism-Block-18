@@ -9,7 +9,7 @@
 [ext_resource type="FontFile" uid="uid://41q7r0lbrokc" path="res://fonts/Gothica-Book.ttf" id="5_7xmpj"]
 [ext_resource type="FontFile" uid="uid://dp8t7cx06kr7m" path="res://fonts/Gothica-Bold.ttf" id="6_16iu3"]
 
-[node name="Inventory2" type="TextureRect" unique_id=885699682]
+[node name="Inventory" type="TextureRect" unique_id=885699682]
 offset_right = 1152.0
 offset_bottom = 648.0
 expand_mode = 1
@@ -151,6 +151,7 @@ offset_bottom = 248.0
 layout_mode = 2
 
 [node name="ItemActionPanel" type="TextureRect" parent="InventoryGrid" unique_id=654569759]
+visible = false
 layout_mode = 0
 offset_left = 491.0
 offset_right = 611.0
@@ -336,7 +337,8 @@ texture_normal = ExtResource("2_otkb8")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="MerchantDialogue" type="TextureRect" parent="ToMerchantScene" unique_id=801906450]
+[node name="MerchantDialogue" type="TextureRect" parent="." unique_id=801906450]
+layout_mode = 0
 offset_left = 663.0
 offset_top = 340.0
 offset_right = 1126.0
@@ -345,7 +347,7 @@ texture = ExtResource("3_ipr67")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="InfoLabel" type="Label" parent="ToMerchantScene/MerchantDialogue" unique_id=1448391794]
+[node name="InfoLabel" type="Label" parent="MerchantDialogue" unique_id=1448391794]
 layout_mode = 0
 offset_left = 82.0
 offset_top = 78.0
