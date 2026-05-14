@@ -13,6 +13,6 @@
         "APS": {"min": 2.0, "max": 3.0},
         "player_speed": {"min": -0.05, "max": 0.0}
     },
-    "icon_path": "would be added soon"
+    "icon_path": "res://sprites/Icons/Items/T1_Weapon_ShortSword.png"
     }
 ]

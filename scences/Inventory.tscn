@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://g1wb3ddsox3l"]
 
+[ext_resource type="Script" uid="uid://cjvylv6uqum00" path="res://scripts/UI/Inventory/InventoryController.cs" id="1_ax3wv"]
 [ext_resource type="Texture2D" uid="uid://c6qodvy62utx3" path="res://sprites/scenes/Inventory/CharacterInventory.png" id="1_imu8d"]
 [ext_resource type="Texture2D" uid="uid://3j0ur7101tgt" path="res://sprites/scenes/Inventory/InventoryItemGridBackground.png" id="2_3052d"]
 [ext_resource type="Texture2D" uid="uid://bl71jnslyw0mp" path="res://sprites/scenes/Inventory/ItemInteractionBackground.png" id="2_cs42f"]
@@ -14,13 +15,16 @@ offset_right = 1152.0
 offset_bottom = 648.0
 expand_mode = 1
 stretch_mode = 5
+script = ExtResource("1_ax3wv")
 
 [node name="EquipmentPanel" type="TextureRect" parent="." unique_id=907759848]
+z_index = -1
 layout_mode = 0
 offset_right = 600.0
 offset_bottom = 400.0
 
 [node name="CharacterSprite" type="TextureRect" parent="EquipmentPanel" unique_id=2146348004]
+z_index = -1
 layout_mode = 0
 offset_left = 1.0
 offset_right = 601.0
@@ -36,7 +40,7 @@ offset_top = 50.0
 offset_right = 110.0
 offset_bottom = 110.0
 
-[node name="ArmorSlot" type="TextureButton" parent="EquipmentPanel" unique_id=1992056841]
+[node name="ArmourSlot" type="TextureButton" parent="EquipmentPanel" unique_id=1992056841]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 130.0
@@ -132,6 +136,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="InventoryGrid" type="TextureRect" parent="." unique_id=1211151608]
+z_index = -2
 layout_mode = 0
 offset_top = 400.0
 offset_right = 534.0
@@ -329,6 +334,7 @@ vertical_alignment = 1
 [node name="ToMerchantScene" type="Node" parent="." unique_id=352051176]
 
 [node name="ToMerchantButton" type="TextureButton" parent="ToMerchantScene" unique_id=1659211079]
+z_index = -1
 offset_left = 696.0
 offset_top = 58.0
 offset_right = 1083.0

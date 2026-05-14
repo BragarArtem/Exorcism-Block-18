@@ -51,7 +51,7 @@ public partial class MainMenuController : Control
     }
     private void OnInventoryPressed()
     {
-        GD.Print("would be added soon");
+        TransitionManager.GoTo("res://scences/Inventory.tscn");
     }
     private void OnEncyclopediaButton()
     {

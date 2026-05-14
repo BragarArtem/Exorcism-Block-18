@@ -22,6 +22,8 @@ buses/default_bus_layout=""
 
 TransitionManager="*uid://cqh1uatj4ixoe"
 SaveManager="*uid://bouw45n5xndv1"
+InventoryManager="*uid://cvf3fqc73joqw"
+ItemFactory="*uid://dxdv0y4ejdges"
 
 [display]
 

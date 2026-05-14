@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-public class BaseItemInstance
+using Godot;
+public partial class BaseItemInstance : GodotObject
 {
     public string TemplateID {get; set;} = "";
     public string InstanceID {get; set;} = Guid.NewGuid().ToString();
@@ -19,5 +20,5 @@ public class BaseItemInstance
         }
     }
 }
-public class ItemInstance : BaseItemInstance{}
-public class TalismanInstance : BaseItemInstance{}
+public partial class ItemInstance : BaseItemInstance{}
+public partial class TalismanInstance : BaseItemInstance{}

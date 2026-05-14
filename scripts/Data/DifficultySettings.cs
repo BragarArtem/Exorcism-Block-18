@@ -14,19 +14,19 @@ public static class DifficultySettings
                 }break;
             case "Cursed":
                 {
-                    HPMultiplier = 3f; DamageMultiplier = 3f; SpeedMultiplier = 1f;  GoldMultiplier = 0.5f;
+                    HPMultiplier = 4f; DamageMultiplier = 4f; SpeedMultiplier = 1f;  GoldMultiplier = 0.4f;
                 }break;
             case "Abyssal":
                 {
-                    HPMultiplier = 9f; DamageMultiplier = 9f; SpeedMultiplier = 1.5f; GoldMultiplier = 1.5f;
+                    HPMultiplier = 16f; DamageMultiplier = 16f; SpeedMultiplier = 1.5f; GoldMultiplier = 1.5f;
                 }break;
             case "Eldritch":
                 {
-                    HPMultiplier = 27f; DamageMultiplier = 27f; SpeedMultiplier = 2f; GoldMultiplier = 5f; 
+                    HPMultiplier = 64f; DamageMultiplier = 64f; SpeedMultiplier = 2f; GoldMultiplier = 3f; 
                 }break;
             case "Forsaken":
                 {
-                    HPMultiplier = 81f; DamageMultiplier = 81f; SpeedMultiplier = 2.5f; GoldMultiplier = 10f;
+                    HPMultiplier = 252f; DamageMultiplier = 252f; SpeedMultiplier = 2.5f; GoldMultiplier = 9f;
                 }break;
         }
     }

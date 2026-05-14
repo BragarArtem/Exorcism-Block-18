@@ -177,6 +177,9 @@ public partial class Player : CharacterBody2D
 				saveManager.CurrentSaveData.Gold += 100;
 				saveManager.CurrentSaveData.BestRunScore.Add(500);
 				saveManager.CurrentSaveData.UnlockedEncyclopediaIds.Add("goblin");
+				var itemFactory = GetNode<ItemFactory>("/root/ItemFactory");
+				var testItem = itemFactory.CreateItem("short_sword_t1");
+				saveManager.CurrentSaveData.Inventory.Add(testItem);
 				saveManager.SaveGame(saveManager.CurrentSaveData);
 			}
 			GetTree().ChangeSceneToFile("res://scences/DeathScreen.tscn");
