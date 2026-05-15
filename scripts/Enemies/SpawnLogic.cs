@@ -3,7 +3,7 @@ using System;
 
 public partial class SpawnLogic : Node2D
 {
-	private PackedScene _enemyScene = GD.Load<PackedScene>("res://Enemy.tscn");
+	private PackedScene _enemyScene = GD.Load<PackedScene>("res://scences/enemy.tscn");
 	private RandomNumberGenerator _rng = new RandomNumberGenerator();
 	public override void _Ready()
 {

@@ -19,6 +19,7 @@ public partial class InventoryController : TextureRect
 	private ItemCardController _currentCard;
 	private BaseItemInstance _currentItem;
 	private Dictionary<string, TextureButton> _equipSlots = new Dictionary<string, TextureButton>();
+	public enum SortType {ByType, ByValue, ByStrenght}
 	public override void _Ready()
 	{
 		_invManager = GetNode<InventoryManager>("/root/InventoryManager");
@@ -44,10 +45,13 @@ public partial class InventoryController : TextureRect
 		_equipSlots["Necklace"] = GetNode<TextureButton>("EquipmentPanel/NecklaceSlot");
 		_equipSlots["Ring1"] = GetNode<TextureButton>("EquipmentPanel/RingSlot1");
 		_equipSlots["Ring2"] = GetNode<TextureButton>("EquipmentPanel/RingSlot2");
+		GetNode<TextureButton>("InventoryGrid/InventorySortPanel/SortByTypeButton").Pressed += () => RefreshInventory(SortType.ByType);
+		GetNode<TextureButton>("InventoryGrid/InventorySortPanel/SortByValueButton").Pressed += () => RefreshInventory(SortType.ByValue);
+		GetNode<TextureButton>("InventoryGrid/InventorySortPanel/SortByStrenghtButton").Pressed += () => RefreshInventory(SortType.ByStrenght);
 		foreach(var slot in _equipSlots)
 		{
 			var slotName = slot.Key;
-			slot.Value.Pressed += () =>
+				slot.Value.Pressed += () =>
 			{
 				if (_saveManager.CurrentSaveData.EquippedItems.ContainsKey(slotName))
 				{
@@ -56,17 +60,23 @@ public partial class InventoryController : TextureRect
 				}
 			};
 		}
-		RefreshInventory();
+		RefreshInventory(SortType.ByType);
 		RefreshEquipSlots();
 	}
-	public void RefreshInventory()
+	public void RefreshInventory(SortType sort = SortType.ByType)
 	{
-		var _gridArray = _gridCont.GetChildren();
-		foreach(var item in _gridArray)
+		while(_gridCont.GetChildCount() > 0)
 		{
-			item.QueueFree();
+			_gridCont.GetChild(0).Free();
 		}
-		foreach(var item in _saveManager.CurrentSaveData.Inventory)
+		var sortedInventory = sort switch
+		{
+			SortType.ByType => _saveManager.CurrentSaveData.Inventory.OrderBy(i => _itemFactory.GetItemTemplate(i.TemplateID)?.Category).ToList(),
+			SortType.ByValue => _saveManager.CurrentSaveData.Inventory.OrderByDescending(i => i.Price).ToList(),
+			SortType.ByStrenght =>	_saveManager.CurrentSaveData.Inventory.OrderByDescending(i => i.GetStat("damage")).ToList(), //would need to change i.GetStat("damage") to the strenght param. of Item in future. I didnt write it down, cause i dont have one, its hard todo it rn, without having full item.stat list;
+			_ => _saveManager.CurrentSaveData.Inventory
+		};
+		foreach(var item in sortedInventory)
 		{
 			var card = _itemCard.Instantiate<ItemCardController>();
 			var template = _itemFactory.GetItemTemplate(item.TemplateID);
@@ -77,6 +87,10 @@ public partial class InventoryController : TextureRect
 	}
 	public void RefreshEquipSlots()
 	{
+		foreach(var slot in _equipSlots)
+		{
+			slot.Value.GetNode<TextureRect>("Item").Visible = false;	
+		}
 		foreach(var slot in _saveManager.CurrentSaveData.EquippedItems)
 		{
 			if (_equipSlots.ContainsKey(slot.Key))

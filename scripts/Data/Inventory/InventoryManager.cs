@@ -51,6 +51,7 @@ public partial class InventoryManager : Node
             _equippedSlots.Remove(slot);
             _saveManager.CurrentSaveData.EquippedItems.Remove(slot);
             item.IsEquipped = false;
+            AddItem(item);
             return true;
         }
         return false;
