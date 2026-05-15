@@ -84,6 +84,7 @@ public override void _Ready()
         .ToList();
         return available;
     }
+    public SkillTemplate GetTemplate(string id) => _skillFactory.GetTemplate(id);
 }
 
             
