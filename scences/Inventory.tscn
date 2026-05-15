@@ -1,142 +1,319 @@
 [gd_scene format=3 uid="uid://g1wb3ddsox3l"]
 
 [ext_resource type="Script" uid="uid://cjvylv6uqum00" path="res://scripts/UI/Inventory/InventoryController.cs" id="1_ax3wv"]
+[ext_resource type="Texture2D" uid="uid://clwdvaxu4hw45" path="res://sprites/scenes/Inventory/InventoryBackGround.png" id="1_hwa1r"]
 [ext_resource type="Texture2D" uid="uid://c6qodvy62utx3" path="res://sprites/scenes/Inventory/CharacterInventory.png" id="1_imu8d"]
 [ext_resource type="Texture2D" uid="uid://3j0ur7101tgt" path="res://sprites/scenes/Inventory/InventoryItemGridBackground.png" id="2_3052d"]
 [ext_resource type="Texture2D" uid="uid://bl71jnslyw0mp" path="res://sprites/scenes/Inventory/ItemInteractionBackground.png" id="2_cs42f"]
 [ext_resource type="Texture2D" uid="uid://wq4j1j6jsh7l" path="res://sprites/scenes/Inventory/ToMerchantButton.png" id="2_otkb8"]
+[ext_resource type="Texture2D" uid="uid://cxwj7r7uw0r0i" path="res://sprites/scenes/Inventory/EquipmentPanel.png" id="3_1b4ao"]
+[ext_resource type="Texture2D" uid="uid://nmmgorl0uv10" path="res://sprites/scenes/Inventory/EquippedItemTemplate.png" id="3_2m8y4"]
 [ext_resource type="Texture2D" uid="uid://dupvds2cjfhf7" path="res://sprites/scenes/Inventory/MerchantDiologue.png" id="3_ipr67"]
 [ext_resource type="Texture2D" uid="uid://6332mr356ky6" path="res://sprites/scenes/Inventory/ItemInteractionButton.png" id="3_v1rfc"]
+[ext_resource type="Texture2D" uid="uid://ntdfy5go3b6r" path="res://sprites/scenes/Inventory/GeneralStatsBar.png" id="4_hwa1r"]
 [ext_resource type="FontFile" uid="uid://41q7r0lbrokc" path="res://fonts/Gothica-Book.ttf" id="5_7xmpj"]
 [ext_resource type="FontFile" uid="uid://dp8t7cx06kr7m" path="res://fonts/Gothica-Bold.ttf" id="6_16iu3"]
 
 [node name="Inventory" type="TextureRect" unique_id=885699682]
+z_index = -5
 offset_right = 1152.0
 offset_bottom = 648.0
+texture = ExtResource("1_hwa1r")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("1_ax3wv")
 
 [node name="EquipmentPanel" type="TextureRect" parent="." unique_id=907759848]
-z_index = -1
+z_index = 4
 layout_mode = 0
 offset_right = 600.0
 offset_bottom = 400.0
+texture = ExtResource("3_1b4ao")
+expand_mode = 1
 
 [node name="CharacterSprite" type="TextureRect" parent="EquipmentPanel" unique_id=2146348004]
-z_index = -1
 layout_mode = 0
-offset_left = 1.0
-offset_right = 601.0
-offset_bottom = 300.0
+offset_left = 215.0
+offset_top = 19.0
+offset_right = 385.0
+offset_bottom = 289.0
 texture = ExtResource("1_imu8d")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="HelmetSlot" type="TextureButton" parent="EquipmentPanel" unique_id=877357351]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 110.0
-offset_bottom = 110.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 120.0
+offset_bottom = 120.0
+texture_normal = ExtResource("3_2m8y4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Item" type="TextureRect" parent="EquipmentPanel/HelmetSlot" unique_id=2147293674]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -28.0
+offset_right = 30.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
 
 [node name="ArmourSlot" type="TextureButton" parent="EquipmentPanel" unique_id=1992056841]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 130.0
-offset_right = 110.0
-offset_bottom = 190.0
+offset_left = 40.0
+offset_top = 120.0
+offset_right = 120.0
+offset_bottom = 200.0
+texture_normal = ExtResource("3_2m8y4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item" type="TextureRect" parent="EquipmentPanel/ArmourSlot" unique_id=1739074251]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -28.0
+offset_right = 30.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
 
 [node name="GlovesSlot" type="TextureButton" parent="EquipmentPanel" unique_id=591670907]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 210.0
-offset_right = 110.0
-offset_bottom = 270.0
+offset_left = 40.0
+offset_top = 200.0
+offset_right = 120.0
+offset_bottom = 280.0
+texture_normal = ExtResource("3_2m8y4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item" type="TextureRect" parent="EquipmentPanel/GlovesSlot" unique_id=1060406958]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -28.0
+offset_right = 30.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
 
 [node name="BootsSlot" type="TextureButton" parent="EquipmentPanel" unique_id=2136700154]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 290.0
-offset_right = 110.0
-offset_bottom = 350.0
+offset_left = 40.0
+offset_top = 280.0
+offset_right = 120.0
+offset_bottom = 360.0
+texture_normal = ExtResource("3_2m8y4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item" type="TextureRect" parent="EquipmentPanel/BootsSlot" unique_id=924490449]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -28.0
+offset_right = 30.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
 
 [node name="WeaponSlot" type="TextureButton" parent="EquipmentPanel" unique_id=1838711743]
 layout_mode = 0
-offset_left = 490.0
-offset_top = 50.0
-offset_right = 550.0
-offset_bottom = 110.0
+offset_left = 480.0
+offset_top = 40.0
+offset_right = 560.0
+offset_bottom = 120.0
+texture_normal = ExtResource("3_2m8y4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item" type="TextureRect" parent="EquipmentPanel/WeaponSlot" unique_id=1176235466]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -28.0
+offset_right = 30.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
 
 [node name="TalismanSlot" type="TextureButton" parent="EquipmentPanel" unique_id=1651323626]
 layout_mode = 0
-offset_left = 490.0
-offset_top = 130.0
-offset_right = 550.0
-offset_bottom = 190.0
+offset_left = 480.0
+offset_top = 120.0
+offset_right = 560.0
+offset_bottom = 200.0
+texture_normal = ExtResource("3_2m8y4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item" type="TextureRect" parent="EquipmentPanel/TalismanSlot" unique_id=1332144288]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -28.0
+offset_right = 30.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
 
 [node name="NecklaceSlot" type="TextureButton" parent="EquipmentPanel" unique_id=1435615254]
 layout_mode = 0
-offset_left = 490.0
-offset_top = 210.0
-offset_right = 550.0
-offset_bottom = 270.0
+offset_left = 480.0
+offset_top = 200.0
+offset_right = 560.0
+offset_bottom = 280.0
+texture_normal = ExtResource("3_2m8y4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item" type="TextureRect" parent="EquipmentPanel/NecklaceSlot" unique_id=100268842]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -28.0
+offset_right = 30.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
 
 [node name="RingSlot1" type="TextureButton" parent="EquipmentPanel" unique_id=1985735457]
 layout_mode = 0
-offset_left = 490.0
-offset_top = 290.0
-offset_right = 550.0
-offset_bottom = 350.0
+offset_left = 480.0
+offset_top = 280.0
+offset_right = 560.0
+offset_bottom = 360.0
+texture_normal = ExtResource("3_2m8y4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item" type="TextureRect" parent="EquipmentPanel/RingSlot1" unique_id=2037995451]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -28.0
+offset_right = 30.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
 
 [node name="RingSlot2" type="TextureButton" parent="EquipmentPanel" unique_id=1045167792]
 layout_mode = 0
-offset_left = 410.0
-offset_top = 290.0
-offset_right = 470.0
-offset_bottom = 350.0
+offset_left = 400.0
+offset_top = 280.0
+offset_right = 480.0
+offset_bottom = 360.0
+texture_normal = ExtResource("3_2m8y4")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="StatsLabel" type="Panel" parent="EquipmentPanel" unique_id=1435198470]
+[node name="Item" type="TextureRect" parent="EquipmentPanel/RingSlot2" unique_id=387420464]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -28.0
+offset_right = 30.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="StatsLabel" type="TextureRect" parent="EquipmentPanel" unique_id=2102909410]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 290.0
-offset_right = 390.0
-offset_bottom = 350.0
+offset_left = 120.0
+offset_top = 287.0
+offset_right = 400.0
+offset_bottom = 357.0
+texture = ExtResource("4_hwa1r")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="HPLablel" type="Label" parent="EquipmentPanel/StatsLabel" unique_id=461246116]
 layout_mode = 0
-offset_right = 130.0
-offset_bottom = 30.0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 136.0
+offset_bottom = 32.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SpeedLabel" type="Label" parent="EquipmentPanel/StatsLabel" unique_id=646621431]
 layout_mode = 0
-offset_top = 30.0
-offset_right = 130.0
-offset_bottom = 60.0
+offset_left = 7.0
+offset_top = 36.0
+offset_right = 137.0
+offset_bottom = 61.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DamageLabel" type="Label" parent="EquipmentPanel/StatsLabel" unique_id=1146249542]
 layout_mode = 0
-offset_left = 130.0
-offset_right = 260.0
-offset_bottom = 30.0
+offset_left = 144.0
+offset_top = 7.0
+offset_right = 274.0
+offset_bottom = 32.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="APSLabel" type="Label" parent="EquipmentPanel/StatsLabel" unique_id=428717864]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 30.0
-offset_right = 260.0
-offset_bottom = 60.0
+offset_left = 144.0
+offset_top = 36.0
+offset_right = 274.0
+offset_bottom = 61.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="InventoryGrid" type="TextureRect" parent="." unique_id=1211151608]
-z_index = -2
+z_index = 3
 layout_mode = 0
 offset_top = 400.0
 offset_right = 534.0
@@ -154,6 +331,7 @@ offset_bottom = 248.0
 
 [node name="GridContainer" type="GridContainer" parent="InventoryGrid/ScrollContainer" unique_id=1936857495]
 layout_mode = 2
+columns = 5
 
 [node name="ItemActionPanel" type="TextureRect" parent="InventoryGrid" unique_id=654569759]
 visible = false
@@ -256,7 +434,7 @@ text = "Type"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SortyByValueButton" type="TextureButton" parent="InventoryGrid/InventorySortPanel" unique_id=42341963]
+[node name="SortByValueButton" type="TextureButton" parent="InventoryGrid/InventorySortPanel" unique_id=42341963]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 107.0
@@ -266,7 +444,7 @@ texture_normal = ExtResource("3_v1rfc")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="SortByValueLabel" type="Label" parent="InventoryGrid/InventorySortPanel/SortyByValueButton" unique_id=652977236]
+[node name="SortByValueLabel" type="Label" parent="InventoryGrid/InventorySortPanel/SortByValueButton" unique_id=652977236]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 7.0
@@ -334,7 +512,7 @@ vertical_alignment = 1
 [node name="ToMerchantScene" type="Node" parent="." unique_id=352051176]
 
 [node name="ToMerchantButton" type="TextureButton" parent="ToMerchantScene" unique_id=1659211079]
-z_index = -1
+z_index = -4
 offset_left = 696.0
 offset_top = 58.0
 offset_right = 1083.0
@@ -344,6 +522,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="MerchantDialogue" type="TextureRect" parent="." unique_id=801906450]
+z_index = 3
 layout_mode = 0
 offset_left = 663.0
 offset_top = 340.0

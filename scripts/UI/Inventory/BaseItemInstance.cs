@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Godot;
-public partial class BaseItemInstance : GodotObject
+public class BaseItemInstance
 {
     public string TemplateID {get; set;} = "";
     public string InstanceID {get; set;} = Guid.NewGuid().ToString();

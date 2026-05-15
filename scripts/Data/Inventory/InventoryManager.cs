@@ -27,9 +27,16 @@ public partial class InventoryManager : Node
         string slot = itemTemplate?.Slot ?? talismanTemplate?.Slot;
         if (slot != null)
         {
+            if (_equippedSlots.ContainsKey(slot))
+            {
+                var oldItem = _equippedSlots[slot];
+                AddItem(oldItem);
+                oldItem.IsEquipped = false;
+            }
             _equippedSlots[slot] = item;
             _saveManager.CurrentSaveData.EquippedItems[slot] = item;
             item.IsEquipped = true;
+            DeleteItem(item);
             return true;
         }
         return false;
@@ -44,6 +51,7 @@ public partial class InventoryManager : Node
             _equippedSlots.Remove(slot);
             _saveManager.CurrentSaveData.EquippedItems.Remove(slot);
             item.IsEquipped = false;
+            AddItem(item);
             return true;
         }
         return false;

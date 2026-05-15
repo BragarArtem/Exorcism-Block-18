@@ -153,7 +153,7 @@ public partial class Player : CharacterBody2D
 		float radiusSq = _attackZone.AttackRange * _attackZone.AttackRange;
 		foreach(Node node in GetTree().GetNodesInGroup("Enemies"))
 		{
-			if(node is not Node2D enemy || !IsInstanceValid(enemy)) continue;
+			if(node is not CharacterBody2D enemy || !IsInstanceValid(enemy)) continue;
 			float distSq = GlobalPosition.DistanceSquaredTo(enemy.GlobalPosition);
 			if(distSq > radiusSq) continue;
 			Godot.Vector2 toEnemy = (enemy.GlobalPosition - GlobalPosition).Normalized(); 

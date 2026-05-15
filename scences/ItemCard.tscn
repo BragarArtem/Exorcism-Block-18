@@ -5,9 +5,9 @@
 
 [node name="ItemCard" type="TextureButton" unique_id=1186944415 node_paths=PackedStringArray("ItemIcon")]
 z_index = 5
-custom_minimum_size = Vector2(80, 80)
-offset_right = 80.0
-offset_bottom = 80.0
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
 texture_normal = ExtResource("1_doaew")
 ignore_texture_size = true
 stretch_mode = 0
@@ -21,10 +21,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -29.0
-offset_right = 30.0
-offset_bottom = 31.0
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
