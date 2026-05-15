@@ -17,10 +17,24 @@ public partial class SkillFactory : Node
                 using var file = FileAccess.Open("res://data/SkillsSystem/SkillTemplates.json", FileAccess.ModeFlags.Read);
                 string json = file.GetAsText();
                 _skillTemplates = JsonSerializer.Deserialize<List<SkillTemplate>>(json);
-            } catch(Exception path)
+            } catch(Exception ex)
             {
-                GD.PrintErr($"SkillTemplates.json not found at {path}");
+                GD.PrintErr($"SkillTemplates.json not found at {ex}");
             }
+        }
+    }
+    public class SkillInstance {
+    public SkillTemplate Template {get;}
+    public int Level {get; private set;} = 1;
+    public int MaxLevel = 5;
+    public SkillInstance( SkillTemplate template)
+        {
+            Template = template;
+        }
+        public void LevelUp()
+        {
+            if ( Level < MaxLevel)
+            Level++;
         }
     }
     public SkillTemplate GetTemplate(string id)
@@ -32,7 +46,7 @@ public partial class SkillFactory : Node
         }
         else
         {
-            GD.PrintErr("SkillTemplate {id} not found");
+            GD.PrintErr($"SkillTemplate {id} not found");
             return null;
             
         }
@@ -41,3 +55,4 @@ public partial class SkillFactory : Node
     }
         public List<SkillTemplate> GetAllTemplates() => _skillTemplates;
 }
+

@@ -14,6 +14,9 @@ public class SkillTemplate
 {
     [JsonPropertyName("name")] 
     public string Name { get; set; } =" ";
+
+    [JsonPropertyName("icon_path")]
+    public string IconPath { get; set; }
     
     [JsonPropertyName ("id")]
     public string ID { get; set; } = " ";
@@ -23,7 +26,7 @@ public class SkillTemplate
     public SkillType Type {get; set;} 
 
     [JsonPropertyName("usage_type")]
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))] 
     
     public SkillUsageType UsageType { get; set; }
 

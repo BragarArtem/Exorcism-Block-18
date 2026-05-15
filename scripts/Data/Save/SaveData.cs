@@ -12,4 +12,5 @@ public class SaveData
     public string Difficulty {get; set;} = "Cursed";
     public List<BaseItemInstance> Inventory {get; set;} = new List<BaseItemInstance>();
     public Dictionary<string, BaseItemInstance> EquippedItems = new Dictionary<string, BaseItemInstance>();
+    public Dictionary<string, int> AcquiredSkills { get; set; } = new();
 }
