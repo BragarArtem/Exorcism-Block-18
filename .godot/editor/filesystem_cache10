@@ -10,13 +10,13 @@ TalismanTemplates.json::JSON::-1::1778233817::0::1::::<><><>0<>0<><>::
 ::res://fonts/::1777856181
 Gothica-Bold.ttf::FontFile::8281430081556208688::1777856019::1777856019::1::::<><><>0<>0<>650aa394b963dfdf0dfaa59ef9b3ea5b<>res://.godot/imported/Gothica-Bold.ttf-adcc7833c9577042393017599de0b84a.fontdata::
 Gothica-Book.ttf::FontFile::2090179836416586950::1777856181::1777856181::1::::<><><>0<>0<>80f198d898595c46337fa012b2469c9b<>res://.godot/imported/Gothica-Book.ttf-c74cf0012deb06a744ee37873478f75a.fontdata::
-::res://scences/::1778716747
+::res://scences/::1778800688
 battleUI.tscn::PackedScene::2137593316237983167::1777584817::0::1::::<><><>0<>0<><>::uid://dcngih6djlh6k::::res://scripts/UI/HudController.cs
 DeathScreen.tscn::PackedScene::8070473147525769712::1777670146::0::1::::<><><>0<>0<><>::uid://d1owm0ksqxlqt::::res://scripts/UI/DeathScreen.cs<>uid://d1y78jvjiou21::::res://sprites/scenes/You are dead.jpg
 EncyclopediaItemCard.tscn::PackedScene::3947935439389531365::1777591640::0::1::::<><><>0<>0<><>::uid://c4ip7r4e7010u::::res://scripts/UI/Encyclopedia/EncyclopediaItemCard.cs
 enemy.tscn::PackedScene::7379253537950850484::1777849659::0::1::::<><><>0<>0<><>::uid://dsf3bstqd72ga::::res://scripts/Enemies/Goblin.cs<>uid://db4jrp17dmj40::::res://sprites/goblin/Attack1.png<>uid://dst5xyyvdeqf2::::res://sprites/goblin/Walk.png<>uid://lbai5oipcniq::::res://Utility/hurt_box.tscn<>uid://bxypoifpmm14v::::res://sprites/goblin/Hurt.png<>uid://cg7mmppgm0s5i::::res://Utility/hit_box.tscn
-Inventory.tscn::PackedScene::476145918517670991::1778713527::0::1::::<><><>0<>0<><>::uid://cjvylv6uqum00::::res://scripts/UI/Inventory/InventoryController.cs<>uid://c6qodvy62utx3::::res://sprites/scenes/Inventory/CharacterInventory.png<>uid://3j0ur7101tgt::::res://sprites/scenes/Inventory/InventoryItemGridBackground.png<>uid://bl71jnslyw0mp::::res://sprites/scenes/Inventory/ItemInteractionBackground.png<>uid://wq4j1j6jsh7l::::res://sprites/scenes/Inventory/ToMerchantButton.png<>uid://dupvds2cjfhf7::::res://sprites/scenes/Inventory/MerchantDiologue.png<>uid://6332mr356ky6::::res://sprites/scenes/Inventory/ItemInteractionButton.png<>uid://41q7r0lbrokc::::res://fonts/Gothica-Book.ttf<>uid://dp8t7cx06kr7m::::res://fonts/Gothica-Bold.ttf
-ItemCard.tscn::PackedScene::8905550917233795932::1778716747::0::1::::<><><>0<>0<><>::uid://c3bisitgmrehy::::res://sprites/scenes/Inventory/ItemCard.png<>uid://dhbgc1ua5t7nk::::res://scripts/UI/Inventory/ItemCardController.cs
+Inventory.tscn::PackedScene::476145918517670991::1778800688::0::1::::<><><>0<>0<><>::uid://cjvylv6uqum00::::res://scripts/UI/Inventory/InventoryController.cs<>uid://c6qodvy62utx3::::res://sprites/scenes/Inventory/CharacterInventory.png<>uid://3j0ur7101tgt::::res://sprites/scenes/Inventory/InventoryItemGridBackground.png<>uid://bl71jnslyw0mp::::res://sprites/scenes/Inventory/ItemInteractionBackground.png<>uid://wq4j1j6jsh7l::::res://sprites/scenes/Inventory/ToMerchantButton.png<>uid://nmmgorl0uv10::::res://sprites/scenes/Inventory/EquippedItemTemplate.png<>uid://dupvds2cjfhf7::::res://sprites/scenes/Inventory/MerchantDiologue.png<>uid://6332mr356ky6::::res://sprites/scenes/Inventory/ItemInteractionButton.png<>uid://ntdfy5go3b6r::::res://sprites/scenes/Inventory/GeneralStatsBar.png<>uid://41q7r0lbrokc::::res://fonts/Gothica-Book.ttf<>uid://dp8t7cx06kr7m::::res://fonts/Gothica-Bold.ttf
+ItemCard.tscn::PackedScene::8905550917233795932::1778797460::0::1::::<><><>0<>0<><>::uid://c3bisitgmrehy::::res://sprites/scenes/Inventory/ItemCard.png<>uid://dhbgc1ua5t7nk::::res://scripts/UI/Inventory/ItemCardController.cs
 main.tscn::PackedScene::8463161713385073381::1778526977::0::1::::<><><>0<>0<><>::uid://4ycce3cogoq6::::res://scences/player.tscn<>uid://eiswnvx8f7pa::::res://sprites/scenes/backGround.png<>uid://ddeth0fpx7lwm::::res://scences/enemy.tscn<>uid://5pp35ffkfpgp::::res://scences/battleUI.tscn<>res://scripts/Enemies/SpawnLogic.cs
 MainMenu.tscn::PackedScene::2951256127872020751::1778672261::0::1::::<><><>0<>0<><>::uid://0qtpbde0uuqr::::res://scripts/UI/MainMenuController.cs<>uid://cy86sbdnfqlgg::::res://sprites/scenes/MainMenuBackground.png<>uid://chjvb54yj2lh1::::res://sprites/scenes/DifficultyPanel/DifficultyBackGround.png<>uid://dp8t7cx06kr7m::::res://fonts/Gothica-Bold.ttf<>uid://c1pwupwt7cfdh::::res://sprites/scenes/SettingsPanel.png<>uid://08lw4abepqyh::::res://sprites/scenes/EncyclopediaBG.png<>uid://c32fkobf1ku5a::::res://scripts/UI/Difficulty/DifficultyController.cs<>uid://dg105jnkeuifl::::res://sprites/scenes/DifficultyPanel/HollowDifficultyButton.png<>uid://41q7r0lbrokc::::res://fonts/Gothica-Book.ttf<>uid://dplahangrhxp2::::res://sprites/scenes/DifficultyPanel/CursedDifficultyButton.png<>uid://c56pfw35nhstc::::res://scripts/UI/Encyclopedia/EncyclopediaController.cs<>uid://bsukl16hkvooh::::res://sprites/scenes/DifficultyPanel/AbyssalDifficultyButton.png<>uid://dyoa746rt1qwc::::res://sprites/scenes/DifficultyPanel/EldritchDifficultyButton.png<>uid://dmj8xbn22vs1q::::res://sprites/scenes/DifficultyPanel/ForsakenDifficultyButtons.png<>uid://cp7q4o35qc5mh::::res://sprites/scenes/DifficultyPanel/ConfirmDifficultyButton.png
 merchant.tscn::PackedScene::2604502349884772557::1778526978::0::1::::<><><>0<>0<><>::
@@ -40,7 +40,7 @@ Goblin.cs::CSharpScript::8434685962429402280::1777935267::0::1::::<>CharacterBod
 SpawnLogic.cs::CSharpScript::8623607766470767539::1777852167::0::1::::<>Node2D<><>0<>0<><>::
 ::res://scripts/Player/::1778107350
 AttackZone.cs::CSharpScript::906488192023667046::1778233817::0::1::::<>Polygon2D<><>0<>0<><>::
-Player.cs::CSharpScript::4472861661896418729::1778713781::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Player.cs::CSharpScript::4472861661896418729::1778791040::0::1::::<>CharacterBody2D<><>0<>0<><>::
 ::res://scripts/UI/::1778682875
 DeathScreen.cs::CSharpScript::9014431806964637015::1778714013::0::1::::<>Control<><>0<>0<><>::
 HudController.cs::CSharpScript::7326855653167145676::1778233817::0::1::::<>CanvasLayer<><>0<>0<><>::
@@ -52,9 +52,9 @@ EncyclopediaController.cs::CSharpScript::6943423270913006616::1778107353::0::1::
 EncyclopediaEntry.cs::CSharpScript::6521222680755517549::1777499314::0::1::::<><><>0<>0<><>::
 EncyclopediaItemCard.cs::CSharpScript::6825801693139871574::1778181576::0::1::::<>Panel<><>0<>0<><>::
 ::res://scripts/UI/Inventory/::1778706698
-BaseItemInstance.cs::CSharpScript::4542981968163624078::1778690761::0::1::::<>Object<><>0<>0<><>::
-InventoryController.cs::CSharpScript::5449370896333278459::1778713711::0::1::::<>TextureRect<><>0<>0<><>::
-ItemCardController.cs::CSharpScript::7653017604388064572::1778716349::0::1::::<>TextureButton<><>0<>0<><>::
+BaseItemInstance.cs::CSharpScript::4542981968163624078::1778792081::0::1::::<>Object<><>0<>0<><>::
+InventoryController.cs::CSharpScript::5449370896333278459::1778792437::0::1::::<>TextureRect<><>0<>0<><>::
+ItemCardController.cs::CSharpScript::7653017604388064572::1778792312::0::1::::<>TextureButton<><>0<>0<><>::
 ::res://scripts/UI/Transition/::1777584797
 fog_transition.gdshader::Shader::9147978932524773134::1777013146::0::1::::<><><>0<>0<><>::
 TransitionManager.cs::CSharpScript::5911927897362462636::1777013287::0::1::::<>Node<><>0<>0<><>::
@@ -73,8 +73,8 @@ cultist.svg::CompressedTexture2D::4204570637917960380::1777670147::1777738190::1
 hood.svg::CompressedTexture2D::130092991653083788::1777670147::1777738190::1::::<><><>0<>0<>459f6fb8a691f4dd90729ed5be7a5b31<>res://.godot/imported/hood.svg-fa15c687dfbbf398af2cebaf55151d97.ctex::
 knapsack.svg::CompressedTexture2D::2937898868490830258::1777670147::1777738190::1::::<><><>0<>0<>bf2c81a12e645f71c18130f5fbe8e33a<>res://.godot/imported/knapsack.svg-0d3e4e449c711f740adfe56f2f2dd26c.ctex::
 scroll-unfurled.svg::CompressedTexture2D::501713324873589407::1777670147::1777738190::1::::<><><>0<>0<>e0106854c7cee4d9adcd40adb777b1ac<>res://.godot/imported/scroll-unfurled.svg-569e8ea33030ec21e64305ab64b84bc6.ctex::
-::res://sprites/Icons/Items/::1778707237
-T1_Weapon_ShortSword.png::CompressedTexture2D::7163358541560874770::1778707237::1778707237::1::::<><><>0<>0<>78da2d6452b7daa3e22dc2c669e635cd<>res://.godot/imported/T1_Weapon_ShortSword.png-c016eba9c3298291cf8e46f0afeb7443.ctex::
+::res://sprites/Icons/Items/::1778797177
+T1_Weapon_ShortSword.png::CompressedTexture2D::7163358541560874770::1778797055::1778797177::1::::<><><>0<>0<>78da2d6452b7daa3e22dc2c669e635cd<>res://.godot/imported/T1_Weapon_ShortSword.png-c016eba9c3298291cf8e46f0afeb7443.ctex::
 ::res://sprites/Loot & XP/::1777852228
 XpCrystal.png::CompressedTexture2D::462688077444558842::1777852167::1777852228::1::::<><><>0<>0<>3569da84b8576c68eaa0951625cd0097<>res://.godot/imported/XpCrystal.png-7ce9ded35789c4bf907e7fe72bd9a8f5.ctex::
 ::res://sprites/Ogre/::1777738190
@@ -97,10 +97,13 @@ DifficultyBackGround.png::CompressedTexture2D::5284021136884351196::1777850077::
 EldritchDifficultyButton.png::CompressedTexture2D::8872754304218798734::1777850051::1777850051::1::::<><><>0<>0<>d66ef4f4632a73c31d174f986835cb6a<>res://.godot/imported/EldritchDifficultyButton.png-a0867a9a2e99140c48dad4fc5b9b332b.ctex::
 ForsakenDifficultyButtons.png::CompressedTexture2D::8022152382412827844::1777850051::1777850051::1::::<><><>0<>0<>9b3526f38a90f349d6f70c5ca7d8c9e8<>res://.godot/imported/ForsakenDifficultyButtons.png-35f5c15d3d746ed27735a95382772925.ctex::
 HollowDifficultyButton.png::CompressedTexture2D::7635640926402463925::1777850051::1777850051::1::::<><><>0<>0<>0ca3172802473dd8cf7f78f5b90439e9<>res://.godot/imported/HollowDifficultyButton.png-3bddb8573150df0377e59fe72c048736.ctex::
-::res://sprites/scenes/Inventory/::1778716263
+::res://sprites/scenes/Inventory/::1778801486
 CharacterInventory.png::CompressedTexture2D::6982582101021654694::1778528922::1778528922::1::::<><><>0<>0<>08c5a78b5a20c29541d550974662848f<>res://.godot/imported/CharacterInventory.png-fe63cd55b28967f32fe1b69d52ebf100.ctex::
+EquippedItemTemplate.png::CompressedTexture2D::937967581142351665::1778799373::1778799374::1::::<><><>0<>0<>22d876ba7908b1cf305e611fc3e43f24<>res://.godot/imported/EquippedItemTemplate.png-6ff7aaa7273eab16f933888babf141df.ctex::
+GeneralStatsBar.png::CompressedTexture2D::951870531766340531::1778800662::1778800676::1::::<><><>0<>0<>39c622b98a8821d544bb8b7d0bf93783<>res://.godot/imported/GeneralStatsBar.png-0baa81f901aee75bb5c9d53c35b8aebb.ctex::
+InventoryBackGround.png::CompressedTexture2D::5590554647122440984::1778801476::1778801491::1::::<><><>0<>0<>76ece82374c3fca609f976b777273541<>res://.godot/imported/InventoryBackGround.png-c4b32aadb76a574c81c15ee0b8411601.ctex::
 InventoryItemGridBackground.png::CompressedTexture2D::1985421605895171531::1778544626::1778544674::1::::<><><>0<>0<>205c5cbf66d37f08f16506e6d1b4648d<>res://.godot/imported/InventoryItemGridBackground.png-b527b02a2d291eba52f5f499b1174fd5.ctex::
-ItemCard.png::CompressedTexture2D::6740711697064995166::1778716230::1778716263::1::::<><><>0<>0<>9b95c76b7064f6ccc88642aa43fe75de<>res://.godot/imported/ItemCard.png-a1ac4864fb35329473c23a2b2dd078db.ctex::
+ItemCard.png::CompressedTexture2D::6740711697064995166::1778796033::1778797596::1::::<><><>0<>0<>9b95c76b7064f6ccc88642aa43fe75de<>res://.godot/imported/ItemCard.png-a1ac4864fb35329473c23a2b2dd078db.ctex::
 ItemInteractionBackground.png::CompressedTexture2D::3226153476941229339::1778539679::1778539679::1::::<><><>0<>0<>fa3acdbc02eb7821d97117e7d81520a6<>res://.godot/imported/ItemInteractionBackground.png-a460e320e95eab8bfe7b174362be19f8.ctex::
 ItemInteractionButton.png::CompressedTexture2D::2235405679980960399::1778539682::1778539682::1::::<><><>0<>0<>bc2ff7fc7a757263ca5f42b9d0ddcdd6<>res://.godot/imported/ItemInteractionButton.png-018cdb8335f2fe0daf7ccd851e54a442.ctex::
 MerchantDiologue.png::CompressedTexture2D::8595285991613782430::1778539852::1778539854::1::::<><><>0<>0<>35039100952b8fc78ed1f699b5837b0e<>res://.godot/imported/MerchantDiologue.png-a751f92addb24e3779670903bd0efaa3.ctex::
