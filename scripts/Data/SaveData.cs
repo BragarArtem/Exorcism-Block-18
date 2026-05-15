@@ -11,5 +11,5 @@ public class SaveData
     public List <string> UnlockedEncyclopediaIds {get; set;} = new List<string>();
     public string Difficulty {get; set;} = "Cursed";
     public List<BaseItemInstance> Inventory {get; set;} = new List<BaseItemInstance>();
-    public Dictionary<string, BaseItemInstance> EquippedItems = new Dictionary<string, BaseItemInstance>();
+    public Dictionary<string, BaseItemInstance> EquippedItems {get;set;} = new Dictionary<string, BaseItemInstance>();
 }

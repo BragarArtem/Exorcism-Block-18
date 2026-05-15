@@ -8,6 +8,7 @@ public partial class SaveManager : Node
 	public SaveData CurrentSaveData { get; private set; } = new SaveData();
 	public override void _Ready()
 	{
+		Logger.Configure(Logger.LogLevel.Debug, logToFile: true);
 		CurrentSaveData = LoadGame();
 		DifficultySettings.Apply(CurrentSaveData.Difficulty);
 	}
@@ -30,18 +31,18 @@ public partial class SaveManager : Node
 			if (file != null)
 			{
 				file.StoreString(json);
-				GD.Print("Game saved successfully.");
+				Logger.Log("Game saved successfully", Logger.LogLevel.Info);
 			}
 
 			else
 				{
-					GD.PrintErr ($"Failed to open save file for writing : {FileAccess.GetOpenError()}");
+					Logger.Log($"Failed to open save file for writing : {FileAccess.GetOpenError()}", Logger.LogLevel.Error);
 				}
 			}
 			
 		catch (Exception ex)
 		{
-			GD.PrintErr("Failed to save game: " + ex.Message);
+			Logger.Log("Failed to save game: " + ex.Message, Logger.LogLevel.Error);
 		}
 	}
 
@@ -53,13 +54,13 @@ public partial class SaveManager : Node
 			
 			if (!FileAccess.FileExists(SaveFilePath))
 			{
-				GD.Print("No save file found. Returning default save data.");
+				Logger.Log("No save file found", Logger.LogLevel.Debug);
 				return new SaveData();
 			}
 			using var file = FileAccess.Open(SaveFilePath, FileAccess.ModeFlags.Read);
 			if (file == null)
 			{
-				GD.PrintErr($"Failed to open save file for reading: {FileAccess.GetOpenError()}. Returning default save data.");
+				Logger.Log($"Failed to open save file for reading: {FileAccess.GetOpenError()}", Logger.LogLevel.Error);
 				return new SaveData();
 
 			}
@@ -69,16 +70,16 @@ public partial class SaveManager : Node
 			if (data == null)
 			{
 			
-			GD.PrintErr($"Loaded data is null. Returning default save data.");
+				Logger.Log($"Loaded data is null. Returning default save data.", Logger.LogLevel.Error);
 				return new SaveData();
 			}
 			
-			GD.Print("Game loaded successfully.");
+			Logger.Log("Game loaded successfully", Logger.LogLevel.Info);
 			return data;
 		}
 		catch (Exception ex)
 		{
-			GD.PrintErr("Failed to load game: " + ex.Message);
+			Logger.Log("Failed to load the game: " + ex.Message, Logger.LogLevel.Error);
 			return new SaveData();
 		}
 	}

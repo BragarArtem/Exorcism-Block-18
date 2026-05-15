@@ -5,6 +5,7 @@ public class BaseItemInstance
 {
     public string TemplateID {get; set;} = "";
     public string InstanceID {get; set;} = Guid.NewGuid().ToString();
+    public string Description {get; set;} = "";
     public Dictionary<string, float> Stats {get; set;} = new Dictionary<string, float>();
     public decimal Price {get; set;} = 0;
     public bool IsEquipped {get; set;} = false;
@@ -20,5 +21,5 @@ public class BaseItemInstance
         }
     }
 }
-public partial class ItemInstance : BaseItemInstance{}
-public partial class TalismanInstance : BaseItemInstance{}
+public class ItemInstance : BaseItemInstance{}
+public class TalismanInstance : BaseItemInstance{}

@@ -19,6 +19,16 @@ public partial class InventoryController : TextureRect
 	private ItemCardController _currentCard;
 	private BaseItemInstance _currentItem;
 	private Dictionary<string, TextureButton> _equipSlots = new Dictionary<string, TextureButton>();
+	private string[] _merchantIdlePhrases =
+	{
+		"Adventurer, dont put too much faith in the scraps you pull from dead creatures. I've got cleaner steel, warmer armour and boots, that won't fall appart after second clash",
+		"Still alive? Huh. Then fortune hasn't abandoned you just yet. Come take a look - fresh blades, sturdy leather, and a few things worth carrying through this cursed land",
+		"You've seen enough rotten gear out there already. Stop by the wagon, warm your hands, and i'll show you something better than grave-picked iron",
+		"Come closer, traveler. I've got proper steel, thick leather, and supplies worth carrying - and if you found something unusual out there, i'll tell you whethere it's treasure or scrap",
+		"You won't survive long wearing graveyard junk. Take a look through my stock, and lay your finds on the table too - these old eyes still know the worth of good gear"
+	};
+	private string _merchantIdlePhrase;
+	private Label _infoLabel;
 	public enum SortType {ByType, ByValue, ByStrenght}
 	public override void _Ready()
 	{
@@ -33,6 +43,7 @@ public partial class InventoryController : TextureRect
 		_equipLabel = GetNode<Label>("InventoryGrid/ItemActionPanel/EquipButton/EquipLabel");
 		_sellButton = GetNode<TextureButton>("InventoryGrid/ItemActionPanel/SellButton");
 		_closeButton = GetNode<TextureButton>("InventoryGrid/ItemActionPanel/CloseButton");
+		_infoLabel = GetNode<Label>("MerchantDialogue/InfoLabel");
 		_equipButton.Pressed += OnEquipPressed;
 		_sellButton.Pressed += OnSellPressed;
 		_closeButton.Pressed += OnClosePressed;
@@ -48,6 +59,10 @@ public partial class InventoryController : TextureRect
 		GetNode<TextureButton>("InventoryGrid/InventorySortPanel/SortByTypeButton").Pressed += () => RefreshInventory(SortType.ByType);
 		GetNode<TextureButton>("InventoryGrid/InventorySortPanel/SortByValueButton").Pressed += () => RefreshInventory(SortType.ByValue);
 		GetNode<TextureButton>("InventoryGrid/InventorySortPanel/SortByStrenghtButton").Pressed += () => RefreshInventory(SortType.ByStrenght);
+		GetNode<TextureButton>("BackToMenuButton").Pressed += () => OnBackPressed();
+		_merchantIdlePhrase = _merchantIdlePhrases[new Random().Next(_merchantIdlePhrases.Length)];
+		_infoLabel.Text = _merchantIdlePhrase;
+		
 		foreach(var slot in _equipSlots)
 		{
 			var slotName = slot.Key;
@@ -114,6 +129,7 @@ public partial class InventoryController : TextureRect
 			?? _saveManager.CurrentSaveData.EquippedItems.Values.FirstOrDefault(i => i.InstanceID == instanceID);
 		_inventorySortPanel.Visible = false;
 		_itemActionPanel.Visible = true;
+		_infoLabel.Text = _currentItem.Description;
 		if (_currentItem.IsEquipped)
 		{
 			_equipLabel.Text = "Unequip";
@@ -133,20 +149,28 @@ public partial class InventoryController : TextureRect
 		{
 			_invManager.UnequipItem(_currentItem);
 		}
+		_saveManager.SaveGame(_saveManager.CurrentSaveData);
 		RefreshInventory();
 		RefreshEquipSlots();
 		OnClosePressed();
 	}
 	public void OnSellPressed()
 	{
+
 		_invManager.SellItem(_currentItem);
 		RefreshInventory();
 		OnClosePressed();
+		_saveManager.SaveGame(_saveManager.CurrentSaveData);
 	}
 	public void OnClosePressed()
 	{
 		_currentItem = null;
 		_itemActionPanel.Visible = false;
 		_inventorySortPanel.Visible = true;
+		_infoLabel.Text = _merchantIdlePhrase;
+	}
+	public void OnBackPressed()
+	{
+		TransitionManager.GoTo("res://scences/MainMenu.tscn");
 	}
 }

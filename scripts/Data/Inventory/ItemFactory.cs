@@ -49,6 +49,13 @@ public partial class ItemFactory : Node
                 instance.Stats[stat.Key] = value;
                 statSum += value;
             }
+            var sb = new System.Text.StringBuilder();
+            sb.AppendLine(template.Name);
+            foreach(var stat in instance.Stats)
+            {
+                sb.AppendLine($"{stat.Key}: {stat.Value:F2}");  
+            }
+            instance.Description = sb.ToString();
             instance.TemplateID = TemplateID;
             instance.Price = template.PriceBase * ((decimal)statSum / template.Stats.Count);
             return instance;

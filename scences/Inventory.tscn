@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cjvylv6uqum00" path="res://scripts/UI/Inventory/InventoryController.cs" id="1_ax3wv"]
 [ext_resource type="Texture2D" uid="uid://clwdvaxu4hw45" path="res://sprites/scenes/Inventory/InventoryBackGround.png" id="1_hwa1r"]
 [ext_resource type="Texture2D" uid="uid://c6qodvy62utx3" path="res://sprites/scenes/Inventory/CharacterInventory.png" id="1_imu8d"]
-[ext_resource type="Texture2D" uid="uid://3j0ur7101tgt" path="res://sprites/scenes/Inventory/InventoryItemGridBackground.png" id="2_3052d"]
 [ext_resource type="Texture2D" uid="uid://bl71jnslyw0mp" path="res://sprites/scenes/Inventory/ItemInteractionBackground.png" id="2_cs42f"]
 [ext_resource type="Texture2D" uid="uid://wq4j1j6jsh7l" path="res://sprites/scenes/Inventory/ToMerchantButton.png" id="2_otkb8"]
 [ext_resource type="Texture2D" uid="uid://cxwj7r7uw0r0i" path="res://sprites/scenes/Inventory/EquipmentPanel.png" id="3_1b4ao"]
@@ -13,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ntdfy5go3b6r" path="res://sprites/scenes/Inventory/GeneralStatsBar.png" id="4_hwa1r"]
 [ext_resource type="FontFile" uid="uid://41q7r0lbrokc" path="res://fonts/Gothica-Book.ttf" id="5_7xmpj"]
 [ext_resource type="FontFile" uid="uid://dp8t7cx06kr7m" path="res://fonts/Gothica-Bold.ttf" id="6_16iu3"]
+[ext_resource type="Texture2D" uid="uid://kp6eev34g66o" path="res://sprites/scenes/Inventory/InventoryItemGridBackgroundCropped.png" id="7_1b4ao"]
 
 [node name="Inventory" type="TextureRect" unique_id=885699682]
 z_index = -5
@@ -315,18 +315,19 @@ vertical_alignment = 1
 [node name="InventoryGrid" type="TextureRect" parent="." unique_id=1211151608]
 z_index = 3
 layout_mode = 0
-offset_top = 400.0
-offset_right = 534.0
-offset_bottom = 733.0
-texture = ExtResource("2_3052d")
+offset_left = 1.0
+offset_top = 398.0
+offset_right = 518.0
+offset_bottom = 648.0
+texture = ExtResource("7_1b4ao")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="ScrollContainer" type="ScrollContainer" parent="InventoryGrid" unique_id=1012941085]
 layout_mode = 0
-offset_left = 72.0
+offset_left = 64.0
 offset_top = 61.0
-offset_right = 459.0
+offset_right = 451.0
 offset_bottom = 248.0
 
 [node name="GridContainer" type="GridContainer" parent="InventoryGrid/ScrollContainer" unique_id=1936857495]
@@ -407,8 +408,8 @@ vertical_alignment = 1
 
 [node name="InventorySortPanel" type="TextureRect" parent="InventoryGrid" unique_id=327819392]
 layout_mode = 0
-offset_left = 491.0
-offset_right = 611.0
+offset_left = 483.0
+offset_right = 603.0
 offset_bottom = 220.0
 texture = ExtResource("2_cs42f")
 expand_mode = 1
@@ -524,17 +525,44 @@ stretch_mode = 5
 [node name="MerchantDialogue" type="TextureRect" parent="." unique_id=801906450]
 z_index = 3
 layout_mode = 0
-offset_left = 663.0
-offset_top = 340.0
-offset_right = 1126.0
-offset_bottom = 687.0
+offset_left = 640.0
+offset_top = 333.0
+offset_right = 1147.0
+offset_bottom = 686.0
 texture = ExtResource("3_ipr67")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="InfoLabel" type="Label" parent="MerchantDialogue" unique_id=1448391794]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 78.0
-offset_right = 402.0
-offset_bottom = 235.0
+offset_left = 67.0
+offset_top = 60.0
+offset_right = 456.0
+offset_bottom = 257.0
+theme_override_fonts/font = ExtResource("5_7xmpj")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BackToMenuButton" type="TextureButton" parent="." unique_id=92567080]
+layout_mode = 0
+offset_left = 1029.0
+offset_top = 5.0
+offset_right = 1145.0
+offset_bottom = 53.0
+texture_normal = ExtResource("3_v1rfc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BackToMenuLabel" type="Label" parent="BackToMenuButton" unique_id=698998018]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 108.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("6_16iu3")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
