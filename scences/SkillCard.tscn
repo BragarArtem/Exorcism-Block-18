@@ -1,3 +1,40 @@
 [gd_scene format=3 uid="uid://bo266jhj7dra6"]
 
-[node name="SkillCard" type="Node2D" unique_id=557081191]
+[ext_resource type="Texture2D" uid="uid://cxwj7r7uw0r0i" path="res://sprites/scenes/Inventory/EquipmentPanel.png" id="1_5we35"]
+[ext_resource type="Texture2D" uid="uid://nmmgorl0uv10" path="res://sprites/scenes/Inventory/EquippedItemTemplate.png" id="2_imsys"]
+[ext_resource type="FontFile" uid="uid://dp8t7cx06kr7m" path="res://fonts/Gothica-Bold.ttf" id="3_0a7vd"]
+
+[node name="SkillBackground" type="TextureButton" unique_id=1256979039]
+offset_right = 300.0
+offset_bottom = 400.0
+texture_normal = ExtResource("1_5we35")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SkillIcon" type="TextureRect" parent="." unique_id=246550760]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("2_imsys")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SkillName" type="Label" parent="SkillIcon" unique_id=776991564]
+layout_mode = 0
+offset_top = 300.0
+offset_right = 300.0
+offset_bottom = 340.0
+theme_override_fonts/font = ExtResource("3_0a7vd")
+theme_override_font_sizes/font_size = 30
+text = "PENIS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkillDesription" type="Label" parent="SkillIcon" unique_id=156031083]
+layout_mode = 0
+offset_top = 340.0
+offset_right = 300.0
+offset_bottom = 400.0
+text = "PENIS DECRIPTION"
+horizontal_alignment = 1
+vertical_alignment = 1

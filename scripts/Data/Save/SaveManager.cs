@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Text.Json;
 
 public partial class SaveManager : Node
@@ -82,5 +83,12 @@ public partial class SaveManager : Node
 			Logger.Log("Failed to load the game: " + ex.Message, Logger.LogLevel.Error);
 			return new SaveData();
 		}
+	}
+	public void SaveSkills (Dictionary <string, SkillFactory.SkillInstance> activeSkills)
+	{
+		CurrentSaveData.AcquiredSkills.Clear();
+		foreach (var( id, instance) in activeSkills)
+		    CurrentSaveData.AcquiredSkills[id] = instance.Level;
+			SaveGame(CurrentSaveData);
 	}
 }
