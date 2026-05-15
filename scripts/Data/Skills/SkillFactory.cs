@@ -10,7 +10,7 @@ public partial class SkillFactory : Node
     private Dictionary<string, SkillTemplate> _templatesById = new Dictionary<string, SkillTemplate>();
     public override void _Ready()
     {
-         if (FileAccess.FileExists("res://data/SkillsSystem/SkillTemplates.json"))
+        if (FileAccess.FileExists("res://data/SkillsSystem/SkillTemplates.json"))
         {
             try
             {
@@ -30,9 +30,14 @@ public partial class SkillFactory : Node
         {
             return template;
         }
+        else
+        {
+            GD.PrintErr("SkillTemplate {id} not found");
+            return null;
+            
+        }
 
-        return null;
+
     }
         public List<SkillTemplate> GetAllTemplates() => _skillTemplates;
-
 }

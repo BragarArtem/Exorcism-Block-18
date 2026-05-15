@@ -1,11 +1,37 @@
 [
-{
-    "id": 1,
-    "name": "Sacred Heart",
-    "skillType": "General",
-    "DropWeight" : 14.1,
-    "Type" : "Weapon",
-    "SubType" : ""
+    {
 
+        "id": "00.1",
+        "name": "Sacred Heart",
+        "type": "General",
+        "usage_type": "Passive",
+        "subtype": "None",
+        "drop_weight": 14.1,
+        "stats": {
+            "max_hp": 20.0
+        }
+},
+{
+    "id": "00.2",
+    "name": "Fleet Foot",
+    "type": "General",
+    "usage_type": "Passive",
+    "subtype": "None",
+    "drop_weight": 12.0,
+    "stats": {
+        "move_speed": 10.0
+    }
+},
+
+{
+    "id": "00.3",
+    "name": "Berserker's Fury",
+    "type": "General",
+    "usage_type": "Passive",
+    "subtype": "None",
+    "drop_weight": 8.2,
+    "stats": {
+        "attack_speed": 5.0
+    }
 }
 ]

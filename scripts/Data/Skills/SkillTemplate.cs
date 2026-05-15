@@ -4,10 +4,13 @@ public enum SkillType
 {
 General,
 Class,
-Weapon,
+Weapon
 
 }
+public enum SkillSubtype { None, ShortSword, LongSword, Knight }
+public enum SkillUsageType { Active, Passive }
 public class SkillTemplate
+
 {
     [JsonPropertyName("name")] 
     public string Name { get; set; } =" ";
@@ -16,13 +19,22 @@ public class SkillTemplate
     public string ID { get; set; } = " ";
 
     [JsonPropertyName("type")] 
-    public string Type {get; set;} =" ";
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public SkillType Type {get; set;} 
+
+    [JsonPropertyName("usage_type")]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    
+    public SkillUsageType UsageType { get; set; }
+
+    [JsonPropertyName("subtype")]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public SkillSubtype Subtype { get; set; }
 
     [JsonPropertyName ("drop_weight")]
     public float DropWeight {get; set;} 
 
-    [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum SkillSubtype { None, ShortSword, LongSword, Knight }
+    [JsonPropertyName("stats")]
     public Dictionary<string, float> Stats {get; set;} = new Dictionary<string, float>(); 
 }
 
