@@ -10,7 +10,6 @@ public partial class AttackZone : Polygon2D
 	{
 		Modulate = new Color(1, 1, 1, 0.5f);
 		UpdateConeShape();
-
 	}
 
 	public void UpdateConeShape()

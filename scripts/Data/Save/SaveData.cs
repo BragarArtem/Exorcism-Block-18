@@ -13,4 +13,6 @@ public class SaveData
     public List<BaseItemInstance> Inventory {get; set;} = new List<BaseItemInstance>();
     public Dictionary<string, BaseItemInstance> EquippedItems = new Dictionary<string, BaseItemInstance>();
     public Dictionary<string, int> AcquiredSkills {get; set;} = new Dictionary<string, int>();
+    public List<BaseItemInstance> MerchantStock {get; set; } = new List<BaseItemInstance>();
+    public DateTime LastMerchantRefresh{get ; set ;} = DateTime.MinValue;
 }
