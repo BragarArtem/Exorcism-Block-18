@@ -25,14 +25,15 @@ public partial class Player : CharacterBody2D
 	private float _passiveTimer = 0.0f;
 	private bool _isAttacking = false;
 	private float _currentHP;
+	private SkillManager _skillManager;
 
 	public override void _Ready()
 	{
 
 		_saveManager = GetNode<SaveManager>("/root/SaveManager");
 		_lvlProgression = GetNode<LvlProgression>("/root/LvlProgression");
-		var skillManager = GetNode<SkillManager>("/root/SkillManager");
-		skillManager.SkillSelected += OnSkillSelected;
+		_skillManager = GetNode<SkillManager>("/root/SkillManager");
+		_skillManager.SkillSelected += OnSkillSelected;
 		
 		_hero = GetNode<AnimatedSprite2D>("Hero");
 		_hero.AnimationFinished += OnAnimationFinished;
@@ -49,7 +50,7 @@ public partial class Player : CharacterBody2D
 		_hud?.UpdateExp(
 		_saveManager.CurrentSaveData.CurrentExp,
 		initialNeeded);
- 
+
 	}
 	public override void _PhysicsProcess(double delta)
 	{
@@ -211,6 +212,7 @@ public partial class Player : CharacterBody2D
 		{
 			_saveManager.CurrentSaveData.CurrentExp -= neededExp;
 			_saveManager.CurrentSaveData.CurrentLevel++;
+			_skillManager.SkillOffers();
 			neededExp = _lvlProgression.CalculateXpForLevel(_saveManager.CurrentSaveData.CurrentLevel + 1);
 			// test fo lvl up
 			GD.Print($"Level Up!: {_saveManager.CurrentSaveData.CurrentLevel}");
@@ -223,10 +225,7 @@ public partial class Player : CharacterBody2D
 	}
 	private void OnSkillSelected (string id)
 	{
-	var skillManager = GetNode<SkillManager>("/root/SkillManager");
-	var template = skillManager.GetTemplate(id);
-
-	
+	var template = _skillManager.GetTemplate(id);
 	foreach (var stat in template.Stats)
 	{
 		ApplyStatBonus(stat.Key, stat.Value);
