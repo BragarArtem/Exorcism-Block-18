@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Godot;
 
 [Serializable]
 public class SaveData
@@ -12,7 +13,8 @@ public class SaveData
     public string Difficulty {get; set;} = "Cursed";
     public List<BaseItemInstance> Inventory {get; set;} = new List<BaseItemInstance>();
     public Dictionary<string, BaseItemInstance> EquippedItems = new Dictionary<string, BaseItemInstance>();
-    public Dictionary<string, int> AcquiredSkills {get; set;} = new Dictionary<string, int>();
-    public List<BaseItemInstance> MerchantStock {get; set; } = new List<BaseItemInstance>();
+    public Dictionary<string, int> AcquiredSkills { get; set; } = new();
     public DateTime LastMerchantRefresh{get ; set ;} = DateTime.MinValue;
+    public float CurrentExp {get; set;} = 0f;
+    public int CurrentLevel {get;set;} = 0;
 }

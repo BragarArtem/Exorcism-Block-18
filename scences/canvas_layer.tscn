@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bq6o5m3bmcpmk"]
+
+[ext_resource type="Script" uid="uid://by1wb6jcugydl" path="res://scripts/UI/Skills/SkillSelect.cs" id="1_vfrof"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=686511271]
+script = ExtResource("1_vfrof")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1350385675]
+offset_right = 40.0
+offset_bottom = 40.0

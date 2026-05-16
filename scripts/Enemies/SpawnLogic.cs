@@ -25,9 +25,9 @@ public partial class SpawnLogic : Node2D
 	GetParent().AddChild(enemyInstance);
 
 	}
-    // test method to handle enemy death signal
 	private void OnEnemyDied(float xpValue)
 	{
-	GD.Print($"Enemy died, XP awarded: {xpValue}");
+		var player = GetTree().GetFirstNodeInGroup("player") as Player;
+		player?.GainExp(xpValue);
 	}
 }
