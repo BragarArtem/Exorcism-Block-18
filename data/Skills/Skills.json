@@ -3,6 +3,7 @@
 
         "id": "00.1",
         "name": "Sacred Heart",
+        "description": "",
         "icon_path": "res://sprites/Icons/Skills/shining-heart.svg",
         "type": "General",
         "usage_type": "Passive",
@@ -15,6 +16,7 @@
 {
     "id": "00.2",
     "name": "Fleet Foot",
+    "description": "",
     "icon_path": "res://sprites/Icons/Skills/wingfoot.svg",
     "type": "General",
     "usage_type": "Passive",
@@ -28,6 +30,7 @@
 {
     "id": "00.3",
     "name": "Berserker's Fury",
+    "description": "",
     "icon_path": "res://sprites/Icons/Skills/enrage.svg",
     "type": "General",
     "usage_type": "Passive",

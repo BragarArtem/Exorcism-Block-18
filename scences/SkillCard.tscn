@@ -26,7 +26,7 @@ offset_right = 300.0
 offset_bottom = 340.0
 theme_override_fonts/font = ExtResource("3_0a7vd")
 theme_override_font_sizes/font_size = 30
-text = "PENIS"
+text = "P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -35,6 +35,6 @@ layout_mode = 0
 offset_top = 340.0
 offset_right = 300.0
 offset_bottom = 400.0
-text = "PENIS DECRIPTION"
+text = "DESCRIPTION"
 horizontal_alignment = 1
 vertical_alignment = 1

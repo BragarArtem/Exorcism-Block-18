@@ -6,13 +6,10 @@ public partial class SkillSelectionUI : CanvasLayer
 	[Export] private HBoxContainer _cardsContainer;
 	[Export] private PackedScene _skillCardScene;
 	private SkillManager _skillManager;
-
-
-
 public override void _Ready()
 	{
+		ProcessMode = ProcessModeEnum.Always;
 	_skillManager = GetNode<SkillManager>("/root/SkillManager");
-
 	_skillManager.SkillOffersReady += OnOffersReady;
 	_skillManager.SkillOfferCancelled += OnOfferCancelled;
 		Hide();
@@ -34,7 +31,11 @@ public override void _Ready()
 			_cardsContainer.AddChild(card);
 			card.Setup(template);
 		}
+		GetTree().Paused = true;
 		Show();  
 	}
-	private void OnOfferCancelled() => Hide();
+	private void OnOfferCancelled() {
+		GetTree().Paused = false;
+		Hide();
+	}
 }
