@@ -4,6 +4,7 @@ public partial class HudController : CanvasLayer
 {
     [Export] public ProgressBar HpBar;
     [Export] public ProgressBar ExpBar;
+    private SaveManager _saveManeger;
     public override void _Ready()
     {
         Layer = 10;
@@ -14,7 +15,7 @@ public partial class HudController : CanvasLayer
         ExpBar.Position = new Vector2(0,620);
         ExpBar.Size = new Vector2(1152, 20);
     }
-    public void UpdateHp(float current, float max)
+    public void UpdateHP(float current, float max)
     {
         HpBar.MaxValue = max;
         HpBar.Value = current;

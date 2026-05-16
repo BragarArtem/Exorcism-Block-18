@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://duifmwtioqkjl"]
+
+[node name="SkillBackground" type="TextureButton" unique_id=1224545732]
+custom_minimum_size = Vector2(300, 400)
+offset_right = 40.0
+offset_bottom = 40.0
+ignore_texture_size = true
+
+[node name="SkillIcon" type="TextureRect" parent="." unique_id=2109307771]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+
+[node name="SkillName" type="Label" parent="SkillIcon" unique_id=289960187]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+vertical_alignment = 2
+
+[node name="Description" type="Label" parent="SkillIcon" unique_id=1080024512]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

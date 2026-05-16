@@ -10,16 +10,16 @@ public partial class SkillFactory : Node
     private Dictionary<string, SkillTemplate> _templatesById = new Dictionary<string, SkillTemplate>();
     public override void _Ready()
     {
-        if (FileAccess.FileExists("res://data/SkillsSystem/SkillTemplates.json"))
+        if (FileAccess.FileExists("res://data/SkillsSystem/Skills.json"))
         {
             try
             {
-                using var file = FileAccess.Open("res://data/SkillsSystem/SkillTemplates.json", FileAccess.ModeFlags.Read);
+                using var file = FileAccess.Open("res://data/SkillsSystem/Skills.json", FileAccess.ModeFlags.Read);
                 string json = file.GetAsText();
                 _skillTemplates = JsonSerializer.Deserialize<List<SkillTemplate>>(json);
             } catch(Exception ex)
             {
-                GD.PrintErr($"SkillTemplates.json not found at {ex}");
+                GD.PrintErr($"Skills.json not found at {ex}");
             }
         }
     }

@@ -18,6 +18,8 @@ public partial class Player : CharacterBody2D
 	private AnimatedSprite2D _hero;
 	private AttackZone _attackZone;
 	private HudController _hud;
+	private LvlProgression _lvlProgression;
+	private SaveManager _saveManager;
 	private string _currentDir = "down";
 	private float _activeTimer = 0.0f;
 	private float _passiveTimer = 0.0f;
@@ -26,25 +28,38 @@ public partial class Player : CharacterBody2D
 
 	public override void _Ready()
 	{
+
+		_saveManager = GetNode<SaveManager>("/root/SaveManager");
+		_lvlProgression = GetNode<LvlProgression>("/root/LvlProgression");
+		var skillManager = GetNode<SkillManager>("/root/SkillManager");
+		skillManager.SkillSelected += OnSkillSelected;
+		
 		_hero = GetNode<AnimatedSprite2D>("Hero");
 		_hero.AnimationFinished += OnAnimationFinished;
 		var hurtBox = GetNode<Area2D>("HurtBox");
 		hurtBox.Connect("Hurt", Callable.From<float>(TakeDamage));
 		_hud = GetTree().GetFirstNodeInGroup("hud") as HudController;
-		_currentHP = MaxHP;
-		_hud?.UpdateHp(_currentHP, MaxHP);
 		_attackZone = GetNode<AttackZone>("AttackZone");
 		_attackZone.UpdateConeShape();
+
+		_currentHP = MaxHP;
+		_hud?.UpdateHP(_currentHP, MaxHP);
+		int initialNeeded = _lvlProgression.CalculateXpForLevel(
+		_saveManager.CurrentSaveData.CurrentLevel + 1);
+		_hud?.UpdateExp(
+		_saveManager.CurrentSaveData.CurrentExp,
+		initialNeeded);
+ 
 	}
-    public override void _PhysicsProcess(double delta)
-    {
-        _activeTimer += (float)delta;
+	public override void _PhysicsProcess(double delta)
+	{
+		_activeTimer += (float)delta;
 		_passiveTimer += (float)delta;
 		Godot.Vector2 directionToMouse = (GetGlobalMousePosition() - GlobalPosition).Normalized();
 		HandleMovement(directionToMouse);
 		HandleActiveAttack(directionToMouse);
 		if(PassiveIsEnabled) HandlePassiveAttack();
-    }
+	}
 	private void HandleMovement(Godot.Vector2 directionToMouse)
 	{
 		Godot.Vector2 inputDir = Input.GetVector("move_left", "move_right", "move_up", "move_down");
@@ -167,22 +182,54 @@ public partial class Player : CharacterBody2D
 	{
 		_currentHP -= damage;
 		_currentHP = Mathf.Clamp(_currentHP, 0, MaxHP);
-		_hud?.UpdateHp(_currentHP, MaxHP);
+		_hud?.UpdateHP(_currentHP, MaxHP);
 		if(_currentHP <= 0)
 		{
-			//save-load system test;
 			if (HasNode("/root/SaveManager"))
 			{
 				var saveManager = GetNode<SaveManager>("/root/SaveManager");
 				saveManager.CurrentSaveData.Gold += 100;
 				saveManager.CurrentSaveData.BestRunScore.Add(500);
 				saveManager.CurrentSaveData.UnlockedEncyclopediaIds.Add("goblin");
+				saveManager.CurrentSaveData.CurrentExp = 0f;
+				saveManager.CurrentSaveData.CurrentLevel = 0;
 				var itemFactory = GetNode<ItemFactory>("/root/ItemFactory");
 				var testItem = itemFactory.CreateItem("short_sword_t1");
 				saveManager.CurrentSaveData.Inventory.Add(testItem);
 				saveManager.SaveGame(saveManager.CurrentSaveData);
 			}
 			GetTree().ChangeSceneToFile("res://scences/DeathScreen.tscn");
+		}
+	}
+	public void GainExp(float amount)
+	{
+		_saveManager.CurrentSaveData.CurrentExp += amount;
+		int neededExp = _lvlProgression.CalculateXpForLevel(_saveManager.CurrentSaveData.CurrentLevel + 1);
+		// test for xp bar 
+		GD.Print($"XP: {_saveManager.CurrentSaveData.CurrentExp}/{neededExp} | Level: {_saveManager.CurrentSaveData.CurrentLevel}");
+		while (_saveManager.CurrentSaveData.CurrentExp >= neededExp)
+		{
+			_saveManager.CurrentSaveData.CurrentExp -= neededExp;
+			_saveManager.CurrentSaveData.CurrentLevel++;
+			neededExp = _lvlProgression.CalculateXpForLevel(_saveManager.CurrentSaveData.CurrentLevel + 1);
+			// test fo lvl up
+			GD.Print($"Level Up!: {_saveManager.CurrentSaveData.CurrentLevel}");
+		}
+		
+			_hud?.UpdateExp (
+			_saveManager.CurrentSaveData.CurrentExp,
+			neededExp
+	);
+	}
+	private void OnSkillSelected (string id)
+	{
+	var skillManager = GetNode<SkillManager>("/root/SkillManager");
+	var template = skillManager.GetTemplate(id);
+
+	
+	foreach (var stat in template.Stats)
+	{
+		ApplyStatBonus(stat.Key, stat.Value);
 		}
 	}
 }
