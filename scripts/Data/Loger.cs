@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text.Json;
 using Godot;
+using Godot.NativeInterop;
 
 public static class Logger
 {
@@ -11,6 +12,8 @@ public static class Logger
     private static bool _logToFile = false;
     private static bool _jsonOutput = false;
     private static string _logFilePath = "user://logs.txt";
+    private static int _maxLines = 300;
+    private static Func<string, LogLevel, string, string> _formatter = (msg, level, time) => $"[{level}] {time} | {msg}";
 
     public static void Configure(LogLevel minLevel, bool logToFile = false, bool jsonOutput = false)
     {
@@ -18,11 +21,15 @@ public static class Logger
         _logToFile = logToFile;
         _jsonOutput = jsonOutput;
     }
+    public static void SetFormatter(Func<string, LogLevel, string, string> formatter)
+    {
+        _formatter = formatter;
+    }
     public static void Log(string message, LogLevel level = LogLevel.Info)
     {
         if(level < _minLevel) return;
         string timestamp = DateTime.Now.ToString("HH:mm:ss");
-        string output = _jsonOutput?JsonSerializer.Serialize(new{Level = level.ToString(), timestamp, message}): $"[{level}] {timestamp} | {message}";
+        string output = _jsonOutput?JsonSerializer.Serialize(new{Level = level.ToString(), timestamp, message}): _formatter(message, level, timestamp);
         GD.Print(output);
         if(_logToFile) WriteToFile(output);
     }
@@ -65,12 +72,30 @@ public static class Logger
     }
     private static void WriteToFile(string message)
     {
-        var mode = Godot.FileAccess.FileExists(_logFilePath)? Godot.FileAccess.ModeFlags.ReadWrite : Godot.FileAccess.ModeFlags.Write;
-        using var file = Godot.FileAccess.Open(_logFilePath, Godot.FileAccess.ModeFlags.ReadWrite);
-        if(file != null)
+        var lines = new System.Collections.Generic.List<string>();
+        if (Godot.FileAccess.FileExists(_logFilePath))
         {
-            file.SeekEnd(0);
-            file.StoreLine(message);
+            using var readFile = Godot.FileAccess.Open(_logFilePath, Godot.FileAccess.ModeFlags.Read);
+            if(readFile != null)
+            {
+                while (!readFile.EofReached())
+                {
+                    lines.Add(readFile.GetLine());
+                }
+            }
+            lines.Add(message);
+            while(lines.Count > _maxLines)
+            {
+                lines.RemoveAt(0);
+            }
+            using var writeFile = Godot.FileAccess.Open(_logFilePath, Godot.FileAccess.ModeFlags.Write);
+            if(writeFile != null)
+            {
+                foreach(var line in lines)
+                {
+                    writeFile.StoreLine(line);
+                }
+            }
         }
     }
 }
