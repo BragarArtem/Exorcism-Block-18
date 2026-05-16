@@ -1,5 +1,28 @@
 [gd_scene format=3 uid="uid://bddv1j2clioiv"]
 
-[node name="TextureRect" type="TextureRect" unique_id=532395462]
-offset_right = 40.0
-offset_bottom = 40.0
+[ext_resource type="Script" uid="uid://deq8i6whd28u" path="res://scripts/UI/Merchant/MerchantController.cs" id="1_j86ka"]
+
+[node name="MerchantBackground" type="TextureRect" unique_id=532395462]
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_j86ka")
+
+[node name="GoldLabel" type="Label" parent="." unique_id=1302797361]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 526.0
+offset_right = 572.0
+offset_bottom = 616.0
+
+[node name="ItemStock" type="VBoxContainer" parent="." unique_id=886772961]
+layout_mode = 0
+offset_right = 846.0
+offset_bottom = 371.0
+
+[node name="BuyButton" type="Button" parent="." unique_id=1992472972]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 442.0
+offset_right = 516.0
+offset_bottom = 496.0
+text = "BUY"

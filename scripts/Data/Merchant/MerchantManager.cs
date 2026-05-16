@@ -1,9 +1,11 @@
 using System;
 using Godot;
+using System.Collections.Generic;
 public partial class MerchantManager : Node
 {
     private SaveManager _saveManager;
     private ItemFactory _itemFactory;
+    public List<BaseItemInstance> GetStock() => _saveManager.CurrentSaveData.MerchantStock;
 
     public override void _Ready()
     {

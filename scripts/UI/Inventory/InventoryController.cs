@@ -60,6 +60,8 @@ public partial class InventoryController : TextureRect
 		GetNode<TextureButton>("InventoryGrid/InventorySortPanel/SortByValueButton").Pressed += () => RefreshInventory(SortType.ByValue);
 		GetNode<TextureButton>("InventoryGrid/InventorySortPanel/SortByStrenghtButton").Pressed += () => RefreshInventory(SortType.ByStrenght);
 		GetNode<TextureButton>("BackToMenuButton").Pressed += () => OnBackPressed();
+		GetNode<TextureButton>("ToMerchantScene/ToMerchantButton").Pressed += () => ToMerchantPressed();
+
 		_merchantIdlePhrase = _merchantIdlePhrases[new Random().Next(_merchantIdlePhrases.Length)];
 		_infoLabel.Text = _merchantIdlePhrase;
 		
@@ -172,5 +174,9 @@ public partial class InventoryController : TextureRect
 	public void OnBackPressed()
 	{
 		TransitionManager.GoTo("res://scences/MainMenu.tscn");
+	}
+	public void ToMerchantPressed()
+	{
+		TransitionManager.GoTo("res://scences/Merchant.tscn");
 	}
 }

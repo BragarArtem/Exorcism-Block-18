@@ -24,6 +24,10 @@ TransitionManager="*uid://cqh1uatj4ixoe"
 SaveManager="*uid://bouw45n5xndv1"
 InventoryManager="*uid://cvf3fqc73joqw"
 ItemFactory="*uid://dxdv0y4ejdges"
+MerchantManager="*uid://pug53a2kdyrp"
+SkillManager="*uid://cvewqnwbnnlxl"
+LvlProgression="*uid://due24od7jpxrb"
+SkillFactory="*uid://cjtaugmwi338l"
 
 [display]
 
